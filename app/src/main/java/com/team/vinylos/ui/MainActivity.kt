@@ -1,4 +1,4 @@
-package com.team.vinylos
+package com.team.vinylos.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.team.vinylos.R
 import com.team.vinylos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
