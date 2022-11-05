@@ -12,9 +12,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.team.vinylos.R
 import com.team.vinylos.models.Album
 
-class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>(){
+class AlbumAdapter(albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>(){
 
-    var albums :List<Album> = emptyList()
+    var albums :List<Album> = albums
         set(value) {
             field = value
             notifyDataSetChanged()
