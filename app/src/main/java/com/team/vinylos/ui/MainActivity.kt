@@ -1,14 +1,16 @@
 package com.team.vinylos.ui
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
+import com.google.android.material.snackbar.Snackbar
 import com.team.vinylos.R
 import com.team.vinylos.databinding.ActivityMainBinding
 
@@ -32,6 +34,26 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.albums -> {
+
+                    val intent = Intent(this, AlbumActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.artists-> {
+                    //TODO Implementar page 2 here
+                    true
+                }
+                R.id.collectors-> {
+                    //TODO Implementar page 3 here
+                    true
+                }
+                else -> false
+            }
         }
     }
 
