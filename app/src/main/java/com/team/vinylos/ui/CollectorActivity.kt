@@ -29,6 +29,8 @@ class CollectorActivity : AppCompatActivity() {
 
         var recyclerView = binding.collectorsRv
 
+        //binding.bottomNavigation.setitem
+
         collectorAdapter= CollectorAdapter()
         recyclerView.adapter = collectorAdapter
         recyclerView.layoutManager = LinearLayoutManager(this);
@@ -39,6 +41,8 @@ class CollectorActivity : AppCompatActivity() {
                 collectorAdapter!!.collectors = this
             }
         })
+
+        binding.bottomNavigation.selectedItemId = R.id.collectors
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
@@ -52,7 +56,10 @@ class CollectorActivity : AppCompatActivity() {
                     //TODO Implementar page 2 here
                     true
                 }
-                else -> true
+                R.id.collectors -> {
+                    true
+                }
+                else -> false
             }
         }
     }

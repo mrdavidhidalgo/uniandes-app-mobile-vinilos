@@ -37,7 +37,7 @@ class AlbumActivity : AppCompatActivity() {
             }
         })
 
-
+        binding.bottomNavigation.selectedItemId = R.id.albums
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
@@ -48,9 +48,13 @@ class AlbumActivity : AppCompatActivity() {
                 R.id.collectors-> {
                     val intent = Intent(this, CollectorActivity::class.java)
                     startActivity(intent)
+
                     true
                 }
-                else -> true
+                R.id.albums->{
+                    true
+                }
+                else -> false
             }
         }
     }
