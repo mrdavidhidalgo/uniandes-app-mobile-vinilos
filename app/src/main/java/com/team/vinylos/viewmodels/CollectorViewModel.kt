@@ -10,16 +10,19 @@ import kotlinx.coroutines.withContext
 
 class CollectorViewModel(application: Application) :  AndroidViewModel(application)  {
 
+    private val collectorsRepo = CollectorRepository()
+    private val collectorsMutableData = MutableLiveData<List<Collector>>()
+    val collectors: LiveData<List<Collector>>
+        get() = collectorsMutableData
     init {
         refreshCollectors()
     }
 
-    private val collectorsRepo = CollectorRepository()
 
-    private val collectorsMutableData = MutableLiveData<List<Collector>>()
 
-    val collectors: LiveData<List<Collector>>
-        get() = collectorsMutableData
+
+
+
 
     private fun refreshCollectors() {
         try {
