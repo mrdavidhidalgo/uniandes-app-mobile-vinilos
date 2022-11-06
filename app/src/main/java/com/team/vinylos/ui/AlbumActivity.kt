@@ -1,10 +1,12 @@
 package com.team.vinylos.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.team.vinylos.R
 import com.team.vinylos.databinding.ActivityAlbumBinding
 import com.team.vinylos.ui.adapters.AlbumAdapter
 import com.team.vinylos.models.Album
@@ -23,16 +25,7 @@ class AlbumActivity : AppCompatActivity() {
 
         var recyclerView = binding.albumsRv
 
-        val list = listOf(
-            Album(
-                albumId = 2, name = "Franklin Candanoza",
-                cover = "https://www.elpais.com.co/files/article_main/uploads/2017/01/26/588a4f542d667.jpeg",
-                recordLabel = "aaa",
-                releaseDate = "date",
-                genre = "f",
-                description = "Desarrollador de software"
-            )
-        )
+
         albumAdapter= AlbumAdapter()
         recyclerView.adapter = albumAdapter
         recyclerView.layoutManager = LinearLayoutManager(this);
@@ -43,6 +36,23 @@ class AlbumActivity : AppCompatActivity() {
                 albumAdapter!!.albums = this
             }
         })
+
+
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.artists-> {
+                    //TODO Implementar page 2 here
+                    true
+                }
+                R.id.collectors-> {
+                    val intent = Intent(this, CollectorActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> true
+            }
+        }
     }
 
 

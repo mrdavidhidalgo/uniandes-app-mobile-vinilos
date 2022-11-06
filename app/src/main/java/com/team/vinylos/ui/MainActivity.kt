@@ -49,7 +49,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.collectors-> {
-                    //TODO Implementar page 3 here
+                    val intent = Intent(this, CollectorActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

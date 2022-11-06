@@ -1,10 +1,12 @@
 package com.team.vinylos.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.team.vinylos.R
 import com.team.vinylos.databinding.ActivityAlbumBinding
 import com.team.vinylos.databinding.ActivityCollectorBinding
 import com.team.vinylos.ui.adapters.AlbumAdapter
@@ -37,6 +39,22 @@ class CollectorActivity : AppCompatActivity() {
                 collectorAdapter!!.collectors = this
             }
         })
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.albums -> {
+
+                    val intent = Intent(this, AlbumActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.artists-> {
+                    //TODO Implementar page 2 here
+                    true
+                }
+                else -> true
+            }
+        }
     }
 
 
