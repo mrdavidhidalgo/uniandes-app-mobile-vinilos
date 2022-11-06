@@ -1,4 +1,5 @@
 package com.team.vinylos.ui.adapters
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,9 +13,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.team.vinylos.R
 import com.team.vinylos.models.Album
 
-class AlbumAdapter(albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>(){
+class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
-    var albums :List<Album> = albums
+    var albums: List<Album> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -25,7 +26,8 @@ class AlbumAdapter(albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.Album
             LayoutInflater.from(parent.context),
             AlbumViewHolder.LAYOUT,
             parent,
-            false)
+            false
+        )
         return AlbumViewHolder(withDataBinding)
     }
 
@@ -52,15 +54,16 @@ class AlbumAdapter(albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.Album
             @LayoutRes
             val LAYOUT = R.layout.album_item
         }
+
         fun bind(album: Album) {
             Glide.with(itemView)
                 .load(album.cover.toUri().buildUpon().scheme("https").build())
                 .apply(
                     RequestOptions()
                         .placeholder(R.drawable.ic_launcher_background)
-
-                        .error(R.drawable.ic_launcher_foreground))
-                .into(viewDataBinding.albumCover)
+                        .error(R.drawable.ic_launcher_foreground)
+                )
+                .into(viewDataBinding.cover)
         }
 
     }

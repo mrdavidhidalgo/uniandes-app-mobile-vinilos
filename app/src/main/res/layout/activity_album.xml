@@ -17,6 +17,6 @@
         android:id="@+id/albumsRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/album_item"/>
+        tools:listitem="@layout/album_item" />
 
 </FrameLayout>
