@@ -9,11 +9,12 @@
             type="com.team.vinylos.models.Album" />
     </data>
 
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:strokeColor="@color/cardview_dark_background"
+        app:strokeColor="@color/cardview_shadow_start_color"
         app:strokeWidth="1dp">
 
         <LinearLayout
