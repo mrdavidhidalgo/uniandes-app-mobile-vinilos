@@ -12,7 +12,9 @@ git clone https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos.git
 Se debe Dar Clic en File, luego Open y seleccionar el proyecto descargado
 ![image](https://user-images.githubusercontent.com/3289138/200223069-8af42413-96cc-4c44-820a-2eec1f88eedb.png)
 
-
+### APK
+The APK is esta aqui 
+(https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/blob/1.0.0/app-debug.apk)
 
 ### Construir el proyecto
 Para construir el proyecto dar Ctrl+F9
