@@ -43,7 +43,7 @@ Se esta usando el siguiente esquema de proyectos:
 Desplegar el emulador o conectar el dispositivo con SO ANdroid (Activar depuracion por USB en mode desarrollador)
 
 
-#De forma Grafica en Android Studio
+### De forma Grafica en Android Studio
 En la carpeta com.team.vinylos (androidTest), dar click derechoc sobre cualquiera de estos 3 tests y dar Run:
 
 * Test1Albums
@@ -58,7 +58,7 @@ Se desplegará la siguiente ventana con el resumen
 
 
 
-#Por consola
+### Por consola
 Entrar al directorio app/src/androidTest/java/com/team/vinylos/
 y ejecutar el comando
 
