@@ -8,7 +8,7 @@
         android:title="@string/albums"/>
     <item
         android:id="@+id/artists"
-        android:enabled="false"
+        android:enabled="true"
         android:checkable="true"
         android:checked="true"
         android:icon="@android:drawable/ic_dialog_info"
