@@ -62,15 +62,15 @@ Se desplegará la siguiente ventana con el resumen
 Entrar al directorio app/src/androidTest/java/com/team/vinylos/
 y ejecutar el comando
 
-* Test1Album
+#### Test1Album
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Artists' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
-* Test1Artists
+#### Test1Artists
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Albums' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
-* Test1Collectors
+#### Test1Collectors
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Collectors' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
