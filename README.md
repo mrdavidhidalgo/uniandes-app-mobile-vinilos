@@ -35,3 +35,39 @@ Se esta usando el siguiente esquema de proyectos:
   En este paquete se encuentra el código relacionado las vistas de la aplicación
 ### viewmodels
   En este paquete se encuentra el código de los mediadores, mas conocidos como ViewModesl de  MVVM
+
+
+#Procedimientos de Pruebas automatizadas
+
+## Para Espresso 
+Desplegar el emulador o conectar el dispositivo con SO ANdroid (Activar depuracion por USB en mode desarrollador)
+
+
+#De forma Grafica en Android Studio
+En la carpeta com.team.vinylos (androidTest), dar click derechoc sobre cualquiera de estos 3 tests y dar Run:
+
+* Test1Albums
+* Test1Artists
+* TestCollectors
+
+![imagen](https://user-images.githubusercontent.com/98839764/200232283-7ec7b2d1-d8f2-4ab8-996a-1b6bcebe1403.png)
+
+Se desplegará la siguiente ventana con el resumen
+
+![imagen](https://user-images.githubusercontent.com/98839764/200232383-864b3cb1-f329-41c6-bf82-0f7671058d24.png)
+
+
+
+#Por consola
+Entrar al directorio app/src/androidTest/java/com/team/vinylos/
+y ejecutar el comando
+
+* Test1Albums
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Artists' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+
+* Test1Artists
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Albums' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+
+* Test1Collectors
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Collectors' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+
