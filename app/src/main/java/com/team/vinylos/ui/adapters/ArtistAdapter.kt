@@ -62,7 +62,6 @@ class ArtistAdapter() : RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
                 )
                 .into(viewDataBinding.image)
         }
-
     }
 
 }
