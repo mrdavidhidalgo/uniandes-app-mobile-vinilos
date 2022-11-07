@@ -15,4 +15,5 @@
     <string name="email">Email</string>
     <string name="phone">Telefono</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="bdate">Nacimiento</string>
 </resources>

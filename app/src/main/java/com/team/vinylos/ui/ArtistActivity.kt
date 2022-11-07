@@ -7,42 +7,42 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.team.vinylos.R
-import com.team.vinylos.databinding.ActivityAlbumBinding
-import com.team.vinylos.ui.adapters.AlbumAdapter
-import com.team.vinylos.models.Album
-import com.team.vinylos.viewmodels.AlbumViewModel
+import com.team.vinylos.databinding.ActivityArtistBinding
+import com.team.vinylos.ui.adapters.ArtistAdapter
+import com.team.vinylos.models.Artist
+import com.team.vinylos.viewmodels.ArtistViewModel
 
-class AlbumActivity : AppCompatActivity() {
+class ArtistActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: AlbumViewModel
-    private var albumAdapter: AlbumAdapter? = null
+    private lateinit var viewModel: ArtistViewModel
+    private var artistAdapter: ArtistAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityAlbumBinding.inflate(layoutInflater)
+        val binding = ActivityArtistBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var recyclerView = binding.albumsRv
+        var recyclerView = binding.artistsRv
 
 
-        albumAdapter= AlbumAdapter()
-        recyclerView.adapter = albumAdapter
+        artistAdapter= ArtistAdapter()
+        recyclerView.adapter = artistAdapter
         recyclerView.layoutManager = LinearLayoutManager(this);
 
-        viewModel = ViewModelProvider(this).get(AlbumViewModel::class.java)
-        viewModel.albums.observe(this, Observer<List<Album>> {
+        viewModel = ViewModelProvider(this).get(ArtistViewModel::class.java)
+        viewModel.artists.observe(this, Observer<List<Artist>> {
             it.apply {
-                albumAdapter!!.albums = this
+                artistAdapter!!.artists = this
             }
         })
 
-        binding.bottomNavigation.selectedItemId = R.id.albums
+        binding.bottomNavigation.selectedItemId = R.id.artists
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.artists-> {
-                    val intent = Intent(this, ArtistActivity::class.java)
+                R.id.albums-> {
+                    val intent = Intent(this, AlbumActivity::class.java)
                     startActivity(intent)
                     true
                 }
@@ -52,7 +52,7 @@ class AlbumActivity : AppCompatActivity() {
 
                     true
                 }
-                R.id.albums->{
+                R.id.artists->{
                     true
                 }
                 else -> false

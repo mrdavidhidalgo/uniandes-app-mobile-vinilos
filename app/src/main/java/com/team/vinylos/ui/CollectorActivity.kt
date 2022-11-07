@@ -53,7 +53,8 @@ class CollectorActivity : AppCompatActivity() {
                     true
                 }
                 R.id.artists-> {
-                    //TODO Implementar page 2 here
+                    val intent = Intent(this, ArtistActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.collectors -> {

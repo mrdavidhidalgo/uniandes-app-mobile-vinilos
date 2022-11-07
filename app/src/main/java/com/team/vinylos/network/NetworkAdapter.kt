@@ -1,6 +1,7 @@
 package com.team.vinylos.network
 
 import com.team.vinylos.models.Album
+import com.team.vinylos.models.Artist
 import com.team.vinylos.models.Collector
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -15,10 +16,13 @@ object NetworkAdapter {
 
     private val collectorResource: CollectorsResource = RetrofitHelper.getRetrofit().create(CollectorsResource::class.java)
 
+    private val artistResource: ArtistsResource = RetrofitHelper.getRetrofit().create(ArtistsResource::class.java)
+
     suspend fun getAlbums(): List<Album> = albumResource.getAlbums()
 
     suspend fun getCollectors(): List<Collector> = collectorResource.getCollectors()
 
+    suspend fun getArtists(): List<Artist> = artistResource.getArtists()
 }
 
 object RetrofitHelper {
@@ -47,4 +51,9 @@ interface AlbumsResource {
 interface CollectorsResource {
     @GET("/collectors")
     suspend fun getCollectors():List<Collector>
+}
+
+interface ArtistsResource {
+    @GET("/musicians")
+    suspend fun getArtists():List<Artist>
 }
