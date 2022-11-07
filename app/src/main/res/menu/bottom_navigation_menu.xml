@@ -2,17 +2,23 @@
     <item
         android:id="@+id/albums"
         android:enabled="true"
-        android:icon="@drawable/albumeslogo_background"
+        android:checkable="true"
+        android:checked="true"
+        android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/albums"/>
     <item
         android:id="@+id/artists"
         android:enabled="false"
-        android:icon="@drawable/ic_launcher_background"
+        android:checkable="true"
+        android:checked="true"
+        android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/artist"/>
 
     <item
         android:id="@+id/collectors"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_background"
+        android:checkable="true"
+        android:checked="true"
+        android:icon="@android:drawable/ic_media_play"
         android:title="@string/collectors"/>
 </menu>
