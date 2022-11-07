@@ -68,9 +68,10 @@ adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1
 ``
 * Test1Artists
 ``
-ad`b shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Albums' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Albums' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
 * Test1Collectors
 ``
-ad`b shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Collectors' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Collectors' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
 
