@@ -37,7 +37,7 @@ Se esta usando el siguiente esquema de proyectos:
   En este paquete se encuentra el código de los mediadores, mas conocidos como ViewModesl de  MVVM
 
 
-#Procedimientos de Pruebas automatizadas
+# Procedimientos de Pruebas automatizadas
 
 ## Para Espresso 
 Desplegar el emulador o conectar el dispositivo con SO ANdroid (Activar depuracion por USB en mode desarrollador)
