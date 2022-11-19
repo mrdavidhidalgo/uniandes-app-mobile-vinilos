@@ -18,12 +18,6 @@ class CollectorViewModel(application: Application) :  AndroidViewModel(applicati
         refreshCollectors()
     }
 
-
-
-
-
-
-
     private fun refreshCollectors() {
         try {
             viewModelScope.launch (Dispatchers.Default){
