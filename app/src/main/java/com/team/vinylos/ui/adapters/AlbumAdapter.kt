@@ -9,6 +9,7 @@ import androidx.annotation.LayoutRes
 import androidx.core.net.toUri
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.team.vinylos.R
 import com.team.vinylos.models.Album
@@ -57,8 +58,9 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
                 .load(album.cover.toUri().buildUpon().scheme("https").build())
                 .apply(
                     RequestOptions()
-                        .placeholder(R.drawable.ic_launcher_background)
-                        .error(R.drawable.ic_launcher_foreground)
+                        .placeholder(R.drawable.loading_animation)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .error(R.drawable.ic_broken_image)
                 )
                 .into(viewDataBinding.cover)
         }
