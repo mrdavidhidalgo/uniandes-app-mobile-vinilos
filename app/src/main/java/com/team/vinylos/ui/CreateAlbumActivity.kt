@@ -86,7 +86,6 @@ class CreateAlbumActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
             }
 
 
-
             var albumReleaseDateEditText: EditText = findViewById(R.id.albumReleaseDate)
             val albumReleaseDateFormatted = SimpleDateFormat("yyyy-MM-dd").format(
                 SimpleDateFormat("dd/MM/yyyy").parse(albumReleaseDateEditText.text.toString())
@@ -105,8 +104,6 @@ class CreateAlbumActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
             createAlbum(albumRequest)
             val intent = Intent(this, AlbumActivity::class.java)
             startActivity(intent)
-
-
 
 
         }
