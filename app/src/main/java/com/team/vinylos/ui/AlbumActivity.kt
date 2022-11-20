@@ -3,6 +3,7 @@ package com.team.vinylos.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,7 +26,6 @@ class AlbumActivity : AppCompatActivity() {
 
         var recyclerView = binding.albumsRv
 
-
         albumAdapter= AlbumAdapter()
         recyclerView.adapter = albumAdapter
         recyclerView.layoutManager = LinearLayoutManager(this);
@@ -35,6 +35,9 @@ class AlbumActivity : AppCompatActivity() {
             it.apply {
                 albumAdapter!!.albums = this
             }
+        })
+        viewModel.eventNetworkError.observe(this, Observer<Boolean> { isNetworkError ->
+            if (isNetworkError) onNetworkError()
         })
 
         binding.bottomNavigation.selectedItemId = R.id.albums
@@ -59,7 +62,12 @@ class AlbumActivity : AppCompatActivity() {
             }
         }
     }
-
+    private fun onNetworkError() {
+        if(!viewModel.isNetworkErrorShown.value!!) {
+            Toast.makeText(this, "Network Error", Toast.LENGTH_LONG).show()
+            viewModel.onNetworkErrorShown()
+        }
+    }
 
 
 }

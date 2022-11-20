@@ -1,6 +1,7 @@
 package com.team.vinylos.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.team.vinylos.models.Collector
 import com.team.vinylos.repositories.CollectorRepository
@@ -14,27 +15,34 @@ class CollectorViewModel(application: Application) :  AndroidViewModel(applicati
     private val collectorsMutableData = MutableLiveData<List<Collector>>()
     val collectors: LiveData<List<Collector>>
         get() = collectorsMutableData
+
+    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    val eventNetworkError: LiveData<Boolean>
+        get() = _eventNetworkError
+
+    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+
+    val isNetworkErrorShown: LiveData<Boolean>
+        get() = _isNetworkErrorShown
+
     init {
         refreshCollectors()
     }
-
-
-
-
-
-
-
+    fun onNetworkErrorShown() {
+        _isNetworkErrorShown.value = true
+    }
     private fun refreshCollectors() {
-        try {
             viewModelScope.launch (Dispatchers.Default){
                 withContext(Dispatchers.IO){
-                    collectorsMutableData.postValue(collectorsRepo.refreshData())
+                    collectorsRepo.refreshData({
+                        collectorsMutableData.postValue(it)
+                        _eventNetworkError.postValue(false)
+                        _isNetworkErrorShown.postValue (false)
+                    },{
+                        Log.d("Error", it.toString())
+                        _eventNetworkError.postValue ( true)
+                    })
                 }
             }
-        }
-        catch (e:Exception){
-            println("Error")
-        }
     }
-
 }

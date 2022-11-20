@@ -1,6 +1,7 @@
 package com.team.vinylos.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.team.vinylos.models.Artist
 import com.team.vinylos.repositories.ArtistRepository
@@ -17,20 +18,35 @@ class ArtistViewModel(application: Application) :  AndroidViewModel(application)
     val artists: LiveData<List<Artist>>
         get() = artistsMutableData
 
+    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    val eventNetworkError: LiveData<Boolean>
+        get() = _eventNetworkError
+
+    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+
+    val isNetworkErrorShown: LiveData<Boolean>
+        get() = _isNetworkErrorShown
+
+
     init {
         refreshArtists()
     }
-
+    fun onNetworkErrorShown() {
+        _isNetworkErrorShown.value = true
+    }
     private fun refreshArtists() {
-        try {
-            viewModelScope.launch (Dispatchers.Default){
-                withContext(Dispatchers.IO){
-                    artistsMutableData.postValue(artistsRepo.refreshData())
-                }
+
+        viewModelScope.launch (Dispatchers.Default){
+            withContext(Dispatchers.IO){
+                artistsRepo.refreshData({
+                    artistsMutableData.postValue(it)
+                    _eventNetworkError.postValue(false)
+                    _isNetworkErrorShown.postValue (false)
+                },{
+                    Log.d("Error", it.toString())
+                    _eventNetworkError.postValue ( true)
+                })
             }
-        }
-        catch (e:Exception){
-            println("Error")
         }
     }
 
