@@ -8,6 +8,9 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,23 +18,40 @@
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
 
-    <TextView
-        android:id="@+id/textview_first"
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createAlbumTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/createAlbumButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_gravity="right"
+        android:drawableTop="@android:drawable/ic_input_add"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:clickable="true"></Button>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/albumsRv"
         android:layout_width="match_parent"
-        android:layout_gravity="bottom"
         android:layout_height="match_parent"
-        tools:listitem="@layout/album_item"
-        android:paddingTop="50dp"/>
+        android:layout_gravity="bottom"
+        android:paddingTop="80dp"
+        tools:listitem="@layout/album_item" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

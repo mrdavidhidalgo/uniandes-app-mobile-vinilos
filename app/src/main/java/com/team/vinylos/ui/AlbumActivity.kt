@@ -59,6 +59,11 @@ class AlbumActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        binding.createAlbumButton.setOnClickListener {
+            val intent = Intent(this, CreateAlbumActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 

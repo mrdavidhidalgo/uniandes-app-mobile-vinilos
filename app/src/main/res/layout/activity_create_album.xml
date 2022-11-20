@@ -20,29 +20,24 @@
             android:id="@+id/textview_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:text="@string/createAlbumTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <LinearLayout
         android:id="@+id/ScrollView01"
-        android:layout_width="361dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:scrollbars="vertical">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/TextViewTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/createAlbumTitle"
-                android:textSize="10pt"></TextView>
 
             <EditText
                 android:id="@+id/albumName"
@@ -50,6 +45,14 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/albumName"
                 android:inputType="text"></EditText>
+
+            <EditText
+                android:id="@+id/albumDescription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/albumDescription"
+                android:inputType="textMultiLine"
+                android:lines="5"></EditText>
 
             <Spinner
                 android:id="@+id/albumGenre"
@@ -77,22 +80,24 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/albumReleaseDate"
+                android:focusable="false"
+                android:clickable="true"
                 android:inputType="date"></EditText>
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/createAlbumButton"
-                android:layout_width="wrap_content"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="@string/createAlbumButton"></Button>
 
             <Button
                 android:id="@+id/canceCreateAlbumButton"
-                android:layout_width="234dp"
+                android:layout_width="190dp"
                 android:layout_height="match_parent"
                 android:text="@string/cancelCreateAlbumButton"></Button>
         </LinearLayout>
@@ -100,7 +105,7 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
@@ -111,11 +116,5 @@
         android:layout_gravity="bottom"
         />
 
-    <EditText
-        android:id="@+id/albumDescription"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/albumDescription"
-        android:inputType="textMultiLine"
-        android:lines="5"></EditText>
+
 </FrameLayout>
