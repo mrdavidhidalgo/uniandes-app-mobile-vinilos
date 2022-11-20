@@ -16,4 +16,26 @@
     <string name="phone">Telefono</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="bdate">Nacimiento</string>
+    <string name="createAlbumTitle">Crear album</string>
+    <string name="albumName">Nombre del álbum</string>
+    <string name="albumDescription">Descripción del album</string>
+
+    <string name="albumgenre1">Classical</string>
+    <string name="albumgenre2">Salsa</string>
+    <string name="albumgenre3">Rock</string>
+    <string name="albumgenre4">Folk</string>
+    <string name="albumGenre">Género del álbum</string>
+
+    <string name="albumRecordLabel">Productora</string>
+    <string name="albumRecordLabelType1">Sony Music</string>
+    <string name="albumRecordLabelType2">EMI</string>
+    <string name="albumRecordLabelType3">Discos Fuentes</string>
+    <string name="albumRecordLabelType4">Elektra</string>
+    <string name="albumRecordLabelType5">Fania Records</string>
+
+    <string name="albumCover">Portada</string>
+    <string name="albumReleaseDate">Fecha de lanzamiento</string>
+
+    <string name="createAlbumButton">Crear</string>
+    <string name="cancelCreateAlbumButton">Cancelar</string>
 </resources>
