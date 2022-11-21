@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content">
 
                     <TableRow
-                        android:layout_width="match_parent"
+                        android:layout_width="386dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center"
@@ -70,11 +70,11 @@
 
                                 <TableRow
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" >
+                                    android:layout_height="match_parent">
 
                                     <TextView
                                         android:id="@+id/textView12"
-                                        android:layout_width="93dp"
+                                        android:layout_width="114dp"
                                         android:layout_height="wrap_content"
                                         android:text="Origen"
                                         android:textStyle="bold" />
@@ -82,14 +82,13 @@
 
                                 <TableRow
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent" >
+                                    android:layout_height="match_parent">
 
                                     <TextView
                                         android:id="@+id/artistOrigin"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@{artist.birthDate}"
-                                        />
+                                        android:text="@{artist.birthDate}" />
                                 </TableRow>
 
                             </TableLayout>
@@ -102,8 +101,9 @@
 
                             <ImageView
                                 android:id="@+id/imageArtist"
-                                android:layout_width="125dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="132dp"
+                                android:layout_height="180dp"
+
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/artistslogo_background" />
                         </LinearLayout>
