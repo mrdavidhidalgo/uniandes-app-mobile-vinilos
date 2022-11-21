@@ -26,5 +26,26 @@ class ArtistRepository (){
                 onComplete(result)
             }
     }
+
+
+    suspend fun getArtist(artistId:Int, onComplete:(resp:Artist)->Unit, onError: (error: Exception)->Unit) {
+
+        var potentialResp = CacheManager.getInstance().get(artistId, Artist::class.java)
+        return if(potentialResp==null){
+            Log.i("Cache", "from network")
+            try {
+                var artist = NetworkAdapter.getArtist(artistId)
+                CacheManager.getInstance().put(artistId, artist, Artist::class.java)
+                onComplete(artist)
+            }catch (e:Exception){
+                onError(e)
+            }
+        } else{
+            var result = potentialResp as Artist
+            Log.i("Cache", "return element from cache")
+            onComplete(result)
+        }
+    }
+
 }
 
