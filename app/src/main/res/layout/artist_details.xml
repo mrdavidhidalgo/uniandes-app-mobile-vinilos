@@ -11,7 +11,6 @@
             type="com.team.vinylos.models.Artist" />
     </data>
 
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,81 +20,136 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/image"
-                android:layout_width="121dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:padding="5pt" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:orientation="vertical"
-                android:padding="5dp">
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_gravity="top"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewName"
+                    android:id="@+id/artistName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{artist.name}"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:paddingLeft="2dp"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="208dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <TextView
+                                        android:id="@+id/textView12"
+                                        android:layout_width="93dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Origen"
+                                        android:textStyle="bold" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <TextView
+                                        android:id="@+id/artistOrigin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{artist.birthDate}"
+                                        />
+                                </TableRow>
+
+                            </TableLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageArtist"
+                                android:layout_width="125dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/artistslogo_background" />
+                        </LinearLayout>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:text="Descripcion"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="187dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/artistDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="105dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:text="@{artist.description}" />
+
+                <Button
+                    android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="8dp"
-                    android:paddingBottom="5dp"
-                    android:text="@{artist.name}"
-                    android:textStyle="bold|italic"
-                    tools:text="ArtistName" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:padding="0dp">
-
-
-                <TextView
-                    android:id="@+id/textViewNzcimientoField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="2dp"
-                    tools:text="Nacimiento"
-                    android:textStyle="bold|italic"
-                    android:text="@string/bdate" />
-
-                    <TextView
-                        android:id="@+id/textViewDescription"
-                        android:layout_width="192dp"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="8dp"
-                        android:paddingTop="3dp"
-                        android:paddingEnd="5dp"
-                        android:paddingBottom="5dp"
-                        android:text="@{artist.birthDate}"
-                        android:textAlignment="textEnd"
-                        android:textSize="10sp"
-                        tools:text="Birthdate" />
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/textViewArtista"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="2dp"
-                    android:text="Artista"
-                    android:textStyle="bold|italic"
-                    tools:text="Artista" />
-
+                    android:background="#1F37BF"
+                    android:text="Premios" />
             </LinearLayout>
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
 </layout>

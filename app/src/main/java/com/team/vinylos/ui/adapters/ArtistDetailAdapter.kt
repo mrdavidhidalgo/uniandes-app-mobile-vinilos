@@ -11,45 +11,47 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.team.vinylos.R
+import com.team.vinylos.databinding.ArtistDetailsBinding
 import com.team.vinylos.models.Artist
 
-class ArtistAdapter() : RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
+class ArtistDetailAdapter() : RecyclerView.Adapter<ArtistDetailAdapter.ArtistDetailViewHolder>() {
 
-    var artists: List<Artist> = listOf()
+    var artists: Artist = Artist()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder {
-        val withDataBinding: ArtistItemBinding = DataBindingUtil.inflate(
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistDetailViewHolder {
+        val withDataBinding: ArtistDetailsBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            ArtistViewHolder.LAYOUT,
+            ArtistDetailViewHolder.LAYOUT,
             parent,
             false
         )
-        return ArtistViewHolder(withDataBinding)
+        return ArtistDetailViewHolder(withDataBinding)
     }
 
-    override fun onBindViewHolder(holder: ArtistViewHolder, position: Int) {
-        holder.viewDataBinding.also {
-            it.artist = artists[position]
+    override fun onBindViewHolder(holder: ArtistDetailViewHolder, position: Int) {
+       holder.viewDataBinding.also {
+            it.artist = artists
         }
-        holder.bind(artists[position])
+        holder.bind(artists)
         holder.viewDataBinding.root.setOnClickListener {
         }
     }
 
     override fun getItemCount(): Int {
-        return artists.size
+        return 1
     }
 
 
-    class ArtistViewHolder(val viewDataBinding: ArtistItemBinding) :
+    class ArtistDetailViewHolder(val viewDataBinding: ArtistDetailsBinding) :
         RecyclerView.ViewHolder(viewDataBinding.root) {
         companion object {
             @LayoutRes
-            val LAYOUT = R.layout.artist_item
+            val LAYOUT = R.layout.artist_details
         }
 
         fun bind(artist: Artist) {
@@ -60,7 +62,7 @@ class ArtistAdapter() : RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
                         .placeholder(R.drawable.ic_launcher_background)
                         .error(R.drawable.ic_launcher_foreground)
                 )
-                .into(viewDataBinding.image)
+                .into(viewDataBinding.imageArtist)
         }
     }
 
