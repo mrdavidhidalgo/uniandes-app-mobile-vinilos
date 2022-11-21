@@ -4,6 +4,8 @@
 ## Plan de pruebas y calidad Semana 6
 Wiki plan pruebas Sprint 2 https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/wiki/plan_pruebas_sprint2
 
+## Apk sprint 2 - semana 5 y 6
+https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/blob/master/app-debug-sprint2.apk
 
 ## ¿Como configurar la aplicación en ambiente local?
 
