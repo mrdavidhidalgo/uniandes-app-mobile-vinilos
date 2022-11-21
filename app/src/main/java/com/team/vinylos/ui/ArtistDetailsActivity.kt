@@ -4,6 +4,7 @@ import android.R.attr.data
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -62,6 +63,9 @@ class ArtistDetailsActivity : AppCompatActivity() {
             }
         })
 
+        viewModel.eventNetworkError.observe(this, Observer<Boolean> { isNetworkError ->
+            if (isNetworkError) onNetworkError()
+        })
 
         binding.bottomNavigation.selectedItemId = R.id.artists
 
@@ -86,6 +90,12 @@ class ArtistDetailsActivity : AppCompatActivity() {
         }
     }
 
+    private fun onNetworkError() {
+        if(!viewModel.isNetworkErrorShown.value!!) {
+            Toast.makeText(this, "Network Error", Toast.LENGTH_LONG).show()
+            viewModel.onNetworkErrorShown()
+        }
+    }
 
 
 }
