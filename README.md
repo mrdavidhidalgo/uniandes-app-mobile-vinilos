@@ -1,6 +1,9 @@
 # uniandes-app-mobile-vinilos
 
 
+## Plan de pruebas y calidad Semana 6
+Wiki plan pruebas Sprint 2 https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/wiki/plan_pruebas_sprint2
+
 
 ## ¿Como configurar la aplicación en ambiente local?
 
