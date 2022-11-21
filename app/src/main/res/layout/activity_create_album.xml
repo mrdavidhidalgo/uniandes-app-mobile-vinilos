@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/createAlbumTitle"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -86,18 +87,20 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/createAlbumButton"
-                android:layout_width="190dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="15"
                 android:layout_height="match_parent"
                 android:text="@string/createAlbumButton"></Button>
 
             <Button
                 android:id="@+id/canceCreateAlbumButton"
-                android:layout_width="190dp"
+                android:layout_weight="15"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:text="@string/cancelCreateAlbumButton"></Button>
         </LinearLayout>

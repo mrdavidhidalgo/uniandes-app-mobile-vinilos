@@ -21,9 +21,9 @@ class CacheManager {
     }
 
     fun put(key: String, value: Any,classs: Class<*>?) {
-        //if (cache.get(generateKey(classs,key)) == null) {
-        cache.put(generateKey(classs,key), value)
-        //}
+        if (cache.get(generateKey(classs,key)) == null) {
+            cache.put(generateKey(classs,key), value)
+        }
     }
 
     fun get(key: String,classs: Class<*>?): Any? {

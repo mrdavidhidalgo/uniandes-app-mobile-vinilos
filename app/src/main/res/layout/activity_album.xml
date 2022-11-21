@@ -27,9 +27,8 @@
                 android:id="@+id/textview_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/createAlbumTitle"
-                android:layout_gravity="left"
-                android:layout_weight="5"
+                android:text="@string/albums"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -71,6 +70,6 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="70dp"
         android:layout_marginEnd="10dp"
-        android:drawableTop="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_input_add"/>
 
 </FrameLayout>

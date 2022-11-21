@@ -73,11 +73,11 @@ class CreateAlbumActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
 
 
             if(albumName.isEmpty()){
-                albumNameEditText.error = "Campo obligatorio"
+                albumNameEditText.error = "Debes diligenciar el nombre del álbum"
                 return@setOnClickListener
             }
             if(albumDescription.isEmpty()){
-                albumDescriptionEditText.error = "Campo obligatorio"
+                albumDescriptionEditText.error = "Debes diligencias una descripción del álbum"
                 return@setOnClickListener
             }
             if(albumDescription.length > 150){
@@ -85,8 +85,18 @@ class CreateAlbumActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                 return@setOnClickListener
             }
 
+            if(albumCover.isEmpty()){
+                albumDescriptionEditText.error = "Debes diligenciar el cover del álbum"
+                return@setOnClickListener
+            }
 
             var albumReleaseDateEditText: EditText = findViewById(R.id.albumReleaseDate)
+
+            if(albumReleaseDateEditText.text.toString().isEmpty()){
+                albumReleaseDateEditText.error = "Debes diligenciar fecha de lanzamiento del álbum"
+                return@setOnClickListener
+            }
+
             val albumReleaseDateFormatted = SimpleDateFormat("yyyy-MM-dd").format(
                 SimpleDateFormat("dd/MM/yyyy").parse(albumReleaseDateEditText.text.toString())
             )
