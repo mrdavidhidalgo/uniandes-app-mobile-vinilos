@@ -5,7 +5,7 @@
 Wiki plan pruebas Sprint 2 https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/wiki/plan_pruebas_sprint2
 
 ## Apk sprint 2 - semana 5 y 6
-https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/blob/master/app-debug-sprint2.apk
+https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/releases/download/1.0.2/app-debug.apk
 
 ## ¿Como configurar la aplicación en ambiente local?
 
@@ -69,7 +69,7 @@ Se desplegará la siguiente ventana con el resumen
 Entrar al directorio app/src/androidTest/java/com/team/vinylos/
 y ejecutar el comando
 
-#### Test1Album
+#### Test1Albums
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Artists' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
@@ -81,4 +81,15 @@ adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test1Collectors' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
-
+#### Test2AlbumsCreateE2E
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2AlbumsCreateE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
+#### Test2AlbumsCreateValidacion (Escenarios de Validación de Datos)
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2AlbumsCreateValidacion' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
+#### Test2ArtistsDetailE2E
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2ArtistsDetail' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
