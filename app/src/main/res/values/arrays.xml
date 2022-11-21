@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="albumGenre">
+        <item>@string/albumgenre1</item>
+        <item>@string/albumgenre2</item>
+        <item>@string/albumgenre3</item>
+        <item>@string/albumgenre4</item>
+    </string-array>
+    <string-array name="albumRecordLabelType">
+        <item>@string/albumRecordLabelType1</item>
+        <item>@string/albumRecordLabelType2</item>
+        <item>@string/albumRecordLabelType3</item>
+        <item>@string/albumRecordLabelType4</item>
+        <item>@string/albumRecordLabelType5</item>
+    </string-array>
+</resources>

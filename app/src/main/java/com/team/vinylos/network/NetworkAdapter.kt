@@ -6,9 +6,14 @@ import com.team.vinylos.models.Collector
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
+
+import com.google.gson.JsonObject
+import com.team.vinylos.models.AlbumResponse
 
 
 object NetworkAdapter {
@@ -23,6 +28,8 @@ object NetworkAdapter {
 
 
     suspend fun getAlbums(): List<Album> = albumResource.getAlbums()
+
+    suspend fun createAlbum(album : JsonObject): AlbumResponse = albumResource.createAlbum(album)
 
     suspend fun getCollectors(): List<Collector> = collectorResource.getCollectors()
 
@@ -51,10 +58,15 @@ object RetrofitHelper {
 
 interface AlbumsResource {
     @GET("/albums")
-    suspend fun getAlbums():List<Album>
+    suspend fun getAlbums(): List<Album>
+
+    @POST("/albums")
+    suspend fun createAlbum(@Body album: JsonObject): AlbumResponse
+
 }
 
-interface CollectorsResource {
+
+    interface CollectorsResource {
     @GET("/collectors")
     suspend fun getCollectors():List<Collector>
 }

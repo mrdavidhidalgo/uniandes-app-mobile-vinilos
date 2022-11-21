@@ -1,18 +1,40 @@
 package com.team.vinylos.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.team.vinylos.models.Album
+import com.team.vinylos.models.AlbumRequest
 import com.team.vinylos.repositories.AlbumRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.google.gson.JsonObject
 
-class AlbumViewModel(application: Application) :  AndroidViewModel(application)  {
+class AlbumViewModel(application: Application) :  AndroidViewModel(application) {
 
     private val albumsRepo = AlbumRepository()
 
     private val albumsMutableData = MutableLiveData<List<Album>>()
+
+    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    val eventNetworkError: LiveData<Boolean>
+        get() = _eventNetworkError
+
+    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+
+    private var _isNetworkErrorShownForCreateAlbum = MutableLiveData<Boolean>(false)
+
+    val isNetworkErrorShown: LiveData<Boolean>
+        get() = _isNetworkErrorShown
+
+    init {
+        refreshAlbums()
+    }
+
+    fun onNetworkErrorShown() {
+        _isNetworkErrorShown.value = true
+    }
 
     val albums: LiveData<List<Album>>
         get() = albumsMutableData
@@ -22,16 +44,43 @@ class AlbumViewModel(application: Application) :  AndroidViewModel(application) 
     }
 
     private fun refreshAlbums() {
+        viewModelScope.launch(Dispatchers.Default) {
+            withContext(Dispatchers.IO) {
+                albumsRepo.refreshData({
+                    albumsMutableData.postValue(it)
+                    _eventNetworkError.postValue(false)
+                    _isNetworkErrorShown.postValue(false)
+                }, {
+                    Log.d("Error", it.toString())
+                    _eventNetworkError.postValue(true)
+                })
+            }
+        }
+    }
+
+    fun createAlbum(request : AlbumRequest){
         try {
             viewModelScope.launch (Dispatchers.Default){
                 withContext(Dispatchers.IO){
-                    albumsMutableData.postValue(albumsRepo.refreshData())
+                    albumsRepo.createAlbum(albumToJsonObject(request))
                 }
             }
         }
         catch (e:Exception){
-            println("Error")
+            println("Error creando album")
         }
     }
+
+    private fun albumToJsonObject(album: AlbumRequest): JsonObject {
+        val paramObject = JsonObject()
+        paramObject.addProperty("name", album.name)
+        paramObject.addProperty("cover", album.cover)
+        paramObject.addProperty("releaseDate", ""+album.releaseDate)
+        paramObject.addProperty("description", album.description)
+        paramObject.addProperty("genre", album.genre)
+        paramObject.addProperty("recordLabel", album.recordLabel)
+        return paramObject
+    }
+
 
 }
