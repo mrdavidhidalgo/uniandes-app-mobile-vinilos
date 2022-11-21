@@ -15,23 +15,23 @@ class CacheManager {
 
     private var cache: LruCache<String, Any> = LruCache(5)
 
-    fun invalidate(key: String,classs: Class<*>?) {
+    fun invalidate(key: Any,classs: Class<*>?) {
         cache.remove(generateKey(classs,key))
 
     }
 
-    fun put(key: String, value: Any,classs: Class<*>?) {
+    fun put(key: Any, value: Any,classs: Class<*>?) {
         if (cache.get(generateKey(classs,key)) == null) {
             cache.put(generateKey(classs,key), value)
         }
     }
 
-    fun get(key: String,classs: Class<*>?): Any? {
+    fun get(key: Any,classs: Class<*>?): Any? {
         return if (cache.get(generateKey(classs,key)) != null) cache.get(generateKey(classs,key)) else null;
 
     }
 
-    private fun generateKey(classs: Class<*>?, key:String):String{
-        return classs.toString()+key;
+    private fun generateKey(classs: Class<*>?, key:Any):String{
+        return classs.toString()+key.toString();
     }
 }
