@@ -13,6 +13,7 @@ import com.team.vinylos.ui.adapters.AlbumAdapter
 import com.team.vinylos.models.Album
 import com.team.vinylos.viewmodels.AlbumViewModel
 
+
 class AlbumActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AlbumViewModel
@@ -60,6 +61,11 @@ class AlbumActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+
+        binding.createAlbumButton.setOnClickListener {
+            val intent = Intent(this, CreateAlbumActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun onNetworkError() {

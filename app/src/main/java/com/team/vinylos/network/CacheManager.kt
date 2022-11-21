@@ -15,6 +15,11 @@ class CacheManager {
 
     private var cache: LruCache<String, Any> = LruCache(5)
 
+    fun invalidate(key: String,classs: Class<*>?) {
+        cache.remove(generateKey(classs,key))
+
+    }
+
     fun put(key: String, value: Any,classs: Class<*>?) {
         if (cache.get(generateKey(classs,key)) == null) {
             cache.put(generateKey(classs,key), value)
