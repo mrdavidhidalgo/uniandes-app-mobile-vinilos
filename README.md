@@ -1,9 +1,6 @@
 # uniandes-app-mobile-vinilos
 
 
-## Documentacion semana 6
-https://github.com/mrdavidhidalgo/uniandes-app-mobile-vinilos/wiki/Entrega-semana-6
-
 
 ## ¿Como configurar la aplicación en ambiente local?
 
