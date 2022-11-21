@@ -63,7 +63,7 @@ class ArtistDetailsActivity : AppCompatActivity() {
         })
 
 
-        binding.bottomNavigation.selectedItemId = R.id.artists
+        //binding.bottomNavigation.selectedItemId = R.id.artists
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
@@ -79,6 +79,8 @@ class ArtistDetailsActivity : AppCompatActivity() {
                     true
                 }
                 R.id.artists->{
+                    val intent = Intent(this, ArtistActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

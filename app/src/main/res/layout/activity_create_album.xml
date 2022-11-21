@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AlbumActivity"
     android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp">
+    android:layout_marginEnd="16dp"
+    android:fadeScrollbars="true"
+    tools:context=".ui.AlbumActivity">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -27,6 +29,9 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/ScrollView01"
         android:layout_width="match_parent"
@@ -80,44 +85,43 @@
                 android:id="@+id/albumReleaseDate"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/albumReleaseDate"
-                android:focusable="false"
                 android:clickable="true"
+                android:focusable="true"
+                android:hint="@string/albumReleaseDate"
                 android:inputType="date"></EditText>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/createAlbumButton"
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_weight="15"
-                android:layout_height="match_parent"
-                android:text="@string/createAlbumButton"></Button>
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/canceCreateAlbumButton"
-                android:layout_weight="15"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:text="@string/cancelCreateAlbumButton"></Button>
-        </LinearLayout>
+                <Button
+                    android:id="@+id/createAlbumButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:text="@string/createAlbumButton"></Button>
 
+                <Button
+                    android:id="@+id/canceCreateAlbumButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:text="@string/cancelCreateAlbumButton"></Button>
+            </LinearLayout>
 
 
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/blue"
-
-        app:menu="@menu/bottom_navigation_menu"
         android:layout_gravity="bottom"
-        />
+
+        app:itemBackground="@color/blue"
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 </FrameLayout>
