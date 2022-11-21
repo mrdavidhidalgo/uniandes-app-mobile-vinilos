@@ -75,7 +75,7 @@ public class Test2AlbumsCreateValidacion {
         onView(withIndex(withId(R.id.cover), 1)).perform(click());
         onView(allOf(withId(R.id.cover), hasBackground(R.drawable.ic_launcher_background)));
     }
-    /*
+
     //Escenario 1: entrar a la aplicacion, ver la lista de albumes, intentar crear un album con nombre vacio y verificar que se muestra el mensaje de error
     @Test
     public void Escenario1() {
@@ -205,7 +205,7 @@ public class Test2AlbumsCreateValidacion {
 
         SystemClock.sleep(5000);
 
-    }*/
+    }
 
     //Escenario 4: entrar a la aplicacion, ver la lista de albumes, intentar crear un album con echa de lanzamiento vacia y verificar que se muestra el mensaje de error
     @Test

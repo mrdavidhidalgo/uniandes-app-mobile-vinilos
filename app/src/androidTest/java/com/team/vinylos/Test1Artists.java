@@ -71,6 +71,12 @@ public class Test1Artists {
         //validar Nombre de un artista
         ViewInteraction album = onView(withId(R.id.textViewName));
         onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText(startsWith("Rubén Blades"))));
+        SystemClock.sleep(2000);
+
+        //Ir a Lista de albumes
+        ViewInteraction menu2 = onView(withId(R.id.albums));
+        menu1.perform(click());
+        SystemClock.sleep(2000);
 
     }
 

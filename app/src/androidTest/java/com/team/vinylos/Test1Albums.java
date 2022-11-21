@@ -81,7 +81,7 @@ public class Test1Albums {
         SystemClock.sleep(1500);
 
         //Ir a Lista de artistas
-        ViewInteraction menu2 = onView(withId(R.id.albums));
+        ViewInteraction menu2 = onView(withId(R.id.artists));
         menu1.perform(click());
         SystemClock.sleep(2000);
     }

@@ -79,6 +79,11 @@ public class Test1Collectors {
         ViewInteraction album = onView(withId(R.id.textViewName));
         onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Manolo Bellon")));
 
+        //Ir a Lista de albumes
+        ViewInteraction menu2 = onView(withId(R.id.albums));
+        menu1.perform(click());
+        SystemClock.sleep(2000);
+
     }
 
     public static Matcher<View> withIndex(final Matcher<View> matcher, final int index) {
