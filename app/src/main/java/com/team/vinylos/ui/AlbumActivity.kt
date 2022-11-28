@@ -59,6 +59,12 @@ class AlbumActivity : AppCompatActivity() {
                 R.id.albums->{
                     true
                 }
+                R.id.prizes-> {
+                    val intent = Intent(this, PrizeActivity::class.java)
+                    startActivity(intent)
+
+                    true
+                }
                 else -> false
             }
         }
