@@ -1,9 +1,7 @@
 package com.team.vinylos.repositories
 
 import android.util.Log
-import com.team.vinylos.models.Album
 import com.team.vinylos.models.Artist
-import com.team.vinylos.models.Collector
 import com.team.vinylos.network.CacheManager
 import com.team.vinylos.network.NetworkAdapter
 

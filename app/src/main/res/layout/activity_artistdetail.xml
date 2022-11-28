@@ -8,6 +8,13 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp">
 
+    <data>
+        <variable
+            name="collector"
+            type="com.team.vinylos.models.Collector" />
+    </data>
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -24,6 +31,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.Toolbar>
+
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/artistDt"
