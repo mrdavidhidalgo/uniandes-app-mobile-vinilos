@@ -3,6 +3,7 @@
     <string name="albums">Albumes</string>
     <string name="artist">Artistas</string>
     <string name="collectors">Coleccionistas</string>
+    <string name="prizes">Premios</string>
 
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -35,4 +36,12 @@
 
     <string name="createAlbumButton">Crear</string>
     <string name="cancelCreateAlbumButton">Cancelar</string>
+
+    <string name="createPrizeTitle">Crear premio</string>
+    <string name="prizeName">Nombre del premio</string>
+    <string name="prizeDescription">Descripción del premio</string>
+    <string name="prizeOrganization">Organización del premio</string>
+
+    <string name="createPrizeButton">Crear</string>
+    <string name="cancelCreatePrizeButton">Cancelar</string>
 </resources>

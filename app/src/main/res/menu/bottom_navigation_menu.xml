@@ -21,4 +21,12 @@
         android:checked="true"
         android:icon="@android:drawable/ic_media_play"
         android:title="@string/collectors"/>
+
+    <item
+        android:id="@+id/prizes"
+        android:checkable="true"
+        android:checked="true"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/prizes" />
 </menu>

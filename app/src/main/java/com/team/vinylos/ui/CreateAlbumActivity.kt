@@ -133,6 +133,12 @@ class CreateAlbumActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                 R.id.albums->{
                     false
                 }
+                R.id.prizes-> {
+                    val intent = Intent(this, PrizeActivity::class.java)
+                    startActivity(intent)
+
+                    true
+                }
                 else -> false
             }
         }

@@ -1,8 +1,5 @@
 package com.team.vinylos.network
 
-import com.team.vinylos.models.Album
-import com.team.vinylos.models.Artist
-import com.team.vinylos.models.Collector
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,7 +10,7 @@ import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
 
 import com.google.gson.JsonObject
-import com.team.vinylos.models.AlbumResponse
+import com.team.vinylos.models.*
 
 
 object NetworkAdapter {
@@ -26,6 +23,7 @@ object NetworkAdapter {
 
     private val artistDetailResource: ArtistsDetailResource = RetrofitHelper.getRetrofit().create(ArtistsDetailResource::class.java)
 
+    private val prizeResource: PrizeResource = RetrofitHelper.getRetrofit().create(PrizeResource::class.java)
 
     suspend fun getAlbums(): List<Album> = albumResource.getAlbums()
 
@@ -36,6 +34,11 @@ object NetworkAdapter {
     suspend fun getArtists(): List<Artist> = artistsResource.getArtists()
 
     suspend fun getArtist(id: Int): Artist = artistDetailResource.getArtist(id)
+
+    suspend fun getPrizes(): List<Prize> = prizeResource.getPrizes()
+
+    suspend fun createPrize(prize: JsonObject): PrizeResponse = prizeResource.createPrize(prize)
+
 }
 
 object RetrofitHelper {
@@ -49,7 +52,8 @@ object RetrofitHelper {
 
 
         return Retrofit.Builder()
-            .baseUrl("https://vynils-back-heroku.herokuapp.com")
+            //.baseUrl("https://vynils-back-heroku.herokuapp.com")
+            .baseUrl("https://vinyls-team4.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -79,4 +83,12 @@ interface ArtistsResource {
 interface ArtistsDetailResource {
     @GET("/musicians/{id}")
     suspend fun getArtist(@Path("id") artistId: Int):Artist
+}
+
+interface  PrizeResource {
+    @GET("/prizes")
+    suspend fun getPrizes(): List<Prize>
+
+    @POST("/prizes")
+    suspend fun createPrize(@Body prize: JsonObject): PrizeResponse
 }

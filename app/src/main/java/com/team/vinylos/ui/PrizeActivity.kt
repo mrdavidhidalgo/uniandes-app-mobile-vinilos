@@ -8,65 +8,71 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.team.vinylos.R
-import com.team.vinylos.databinding.ActivityAlbumBinding
-import com.team.vinylos.databinding.ActivityCollectorBinding
-import com.team.vinylos.ui.adapters.AlbumAdapter
-import com.team.vinylos.models.Album
-import com.team.vinylos.models.Collector
-import com.team.vinylos.ui.adapters.CollectorAdapter
-import com.team.vinylos.viewmodels.AlbumViewModel
-import com.team.vinylos.viewmodels.CollectorViewModel
+import com.team.vinylos.databinding.ActivityArtistBinding
+import com.team.vinylos.databinding.ActivityPrizeBinding
+import com.team.vinylos.ui.adapters.ArtistAdapter
+import com.team.vinylos.models.Artist
+import com.team.vinylos.models.Prize
+import com.team.vinylos.ui.adapters.PrizeAdapter
+import com.team.vinylos.viewmodels.ArtistViewModel
+import com.team.vinylos.viewmodels.PrizeViewModel
 
-class CollectorActivity : AppCompatActivity() {
+class PrizeActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: CollectorViewModel
-    private var collectorAdapter: CollectorAdapter? = null
+    private lateinit var viewModel: PrizeViewModel
+    private var prizeAdapter: PrizeAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityCollectorBinding.inflate(layoutInflater)
+        val binding = ActivityPrizeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var recyclerView = binding.collectorsRv
+        var recyclerView = binding.prizesRv
 
-        //binding.bottomNavigation.setitem
 
-        collectorAdapter= CollectorAdapter()
-        recyclerView.adapter = collectorAdapter
+        prizeAdapter= PrizeAdapter()
+        recyclerView.adapter = prizeAdapter
         recyclerView.layoutManager = LinearLayoutManager(this);
 
-        viewModel = ViewModelProvider(this).get(CollectorViewModel::class.java)
-        viewModel.collectors.observe(this, Observer<List<Collector>> {
+        viewModel = ViewModelProvider(this).get(PrizeViewModel::class.java)
+        viewModel.prizes.observe(this, Observer<List<Prize>> {
             it.apply {
-                collectorAdapter!!.collectors = this
+                prizeAdapter!!.prizes = this
             }
         })
+
         viewModel.eventNetworkError.observe(this, Observer<Boolean> { isNetworkError ->
             if (isNetworkError) onNetworkError()
         })
 
-        binding.bottomNavigation.selectedItemId = R.id.collectors
+        binding.createPrizeButton.setOnClickListener {
+            val intent = Intent(this, CreatePrizeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bottomNavigation.selectedItemId = R.id.prizes
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.albums -> {
-
+                R.id.albums-> {
                     val intent = Intent(this, AlbumActivity::class.java)
                     startActivity(intent)
                     true
                 }
-                R.id.artists-> {
-                    val intent = Intent(this, ArtistActivity::class.java)
+                R.id.collectors-> {
+                    val intent = Intent(this, CollectorActivity::class.java)
                     startActivity(intent)
+
                     true
                 }
-                R.id.collectors -> {
+                R.id.artists->{
+                    val intent = Intent(this, ArtistActivity::class.java)
+                    startActivity(intent)
+
                     true
                 }
                 R.id.prizes-> {
-                    val intent = Intent(this, PrizeActivity::class.java)
-                    startActivity(intent)
 
                     true
                 }
@@ -81,5 +87,6 @@ class CollectorActivity : AppCompatActivity() {
             viewModel.onNetworkErrorShown()
         }
     }
+
 
 }
