@@ -19,11 +19,16 @@ object NetworkAdapter {
 
     private val collectorResource: CollectorsResource = RetrofitHelper.getRetrofit().create(CollectorsResource::class.java)
 
-    private val artistsResource: ArtistsResource = RetrofitHelper.getRetrofit().create(ArtistsResource::class.java)
+    private val getCollectorResource: GetCollectorsResource = RetrofitHelper.getRetrofit().create(GetCollectorsResource::class.java)
 
+    private val artistResource: ArtistsResource = RetrofitHelper.getRetrofit().create(ArtistsResource::class.java)
+	
     private val artistDetailResource: ArtistsDetailResource = RetrofitHelper.getRetrofit().create(ArtistsDetailResource::class.java)
 
     private val prizeResource: PrizeResource = RetrofitHelper.getRetrofit().create(PrizeResource::class.java)
+    private val albumsByCollectorsResource: GetAlbumsByCollectorResource = RetrofitHelper.getRetrofit().create(GetAlbumsByCollectorResource::class.java)
+
+
 
     suspend fun getAlbums(): List<Album> = albumResource.getAlbums()
 
@@ -31,7 +36,11 @@ object NetworkAdapter {
 
     suspend fun getCollectors(): List<Collector> = collectorResource.getCollectors()
 
-    suspend fun getArtists(): List<Artist> = artistsResource.getArtists()
+    suspend fun getCollector(collectorId:Integer): Collector = getCollectorResource.getCollector(collectorId)
+
+    suspend fun getArtists(): List<Artist> = artistResource.getArtists()
+
+    suspend fun getAlbumsByCollector(collectorId:Integer): List<CollectorAlbum> = albumsByCollectorsResource.getAlbums(collectorId)
 
     suspend fun getArtist(id: Int): Artist = artistDetailResource.getArtist(id)
 
@@ -50,10 +59,8 @@ object RetrofitHelper {
             .callTimeout(60, TimeUnit.SECONDS)
             .build()
 
-
         return Retrofit.Builder()
-            //.baseUrl("https://vynils-back-heroku.herokuapp.com")
-            .baseUrl("https://vinyls-team4.herokuapp.com/")
+            .baseUrl("https://vinyls-team4.herokuapp.com")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -78,6 +85,17 @@ interface AlbumsResource {
 interface ArtistsResource {
     @GET("/musicians")
     suspend fun getArtists():List<Artist>
+}
+
+
+interface GetCollectorsResource {
+    @GET("/collectors/{id}")
+    suspend fun getCollector(@Path("id") collectorId:Integer ): Collector
+}
+
+interface GetAlbumsByCollectorResource {
+    @GET("/collectors/{id}/albums")
+    suspend fun getAlbums(@Path("id") collectorId:Integer ): List<CollectorAlbum>
 }
 
 interface ArtistsDetailResource {

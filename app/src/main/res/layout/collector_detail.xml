@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="collector"
+            type="com.team.vinylos.models.Collector" />
+    </data>
+
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CollectorDetailActivity"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="70dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="5"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="5dp"
+                    android:text="@{collector.name}"
+                    android:textStyle="bold|italic"
+                    tools:text="Name" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="5"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+                    <TextView
+                        android:id="@+id/textViewEmailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/email"
+                        android:textStyle="bold|italic"
+                        tools:text="Email" />
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="2dp"
+                    android:text="@{collector.email}"
+                    tools:text="email" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="5"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+                    <TextView
+                        android:id="@+id/textViewTelephoneLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="2dp"
+                        android:text="@string/phone"
+                        android:textStyle="bold|italic"
+                        tools:text="Telefono" />
+                <TextView
+                    android:id="@+id/textViewTelephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="2dp"
+                    android:text="@{collector.telephone}"
+                    tools:text="telephone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                tools:text="  A"
+                android:textColor="@android:color/white"
+                android:textSize="90sp" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/albumes_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="250dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="2dp"
+            android:text="@string/albums"
+            android:textStyle="bold|italic"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textColor="@color/red"
+            tools:text="Albumes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/albumsRv"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/album_item"
+            android:paddingTop="320dp"
+            android:paddingBottom="50dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/blue"
+        app:menu="@menu/bottom_navigation_menu"
+        android:layout_gravity="bottom"
+        />
+</FrameLayout>
+</layout>
