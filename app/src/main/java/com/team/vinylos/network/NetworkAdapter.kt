@@ -25,6 +25,7 @@ object NetworkAdapter {
 	
     private val artistDetailResource: ArtistsDetailResource = RetrofitHelper.getRetrofit().create(ArtistsDetailResource::class.java)
 
+    private val prizeResource: PrizeResource = RetrofitHelper.getRetrofit().create(PrizeResource::class.java)
     private val albumsByCollectorsResource: GetAlbumsByCollectorResource = RetrofitHelper.getRetrofit().create(GetAlbumsByCollectorResource::class.java)
 
 
@@ -42,6 +43,11 @@ object NetworkAdapter {
     suspend fun getAlbumsByCollector(collectorId:Integer): List<CollectorAlbum> = albumsByCollectorsResource.getAlbums(collectorId)
 
     suspend fun getArtist(id: Int): Artist = artistDetailResource.getArtist(id)
+
+    suspend fun getPrizes(): List<Prize> = prizeResource.getPrizes()
+
+    suspend fun createPrize(prize: JsonObject): PrizeResponse = prizeResource.createPrize(prize)
+
 }
 
 object RetrofitHelper {
@@ -95,4 +101,12 @@ interface GetAlbumsByCollectorResource {
 interface ArtistsDetailResource {
     @GET("/musicians/{id}")
     suspend fun getArtist(@Path("id") artistId: Int):Artist
+}
+
+interface  PrizeResource {
+    @GET("/prizes")
+    suspend fun getPrizes(): List<Prize>
+
+    @POST("/prizes")
+    suspend fun createPrize(@Body prize: JsonObject): PrizeResponse
 }
