@@ -38,8 +38,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
 
+        </activity>
 
+        <activity
+            android:name=".ui.CollectorDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Vinylos.NoActionBar">
 
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
 
         </activity>
         <activity
