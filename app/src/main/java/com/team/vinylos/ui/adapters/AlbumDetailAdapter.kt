@@ -1,7 +1,5 @@
 package com.team.vinylos.ui.adapters
 
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,49 +13,32 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.team.vinylos.R
 import com.team.vinylos.models.Album
-import com.team.vinylos.ui.AlbumDetailActivity
-import com.team.vinylos.ui.ArtistDetailsActivity
+import com.team.vinylos.models.Collector
 
-class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
+class AlbumDetailAdapter() : RecyclerView.Adapter<AlbumDetailAdapter.AlbumDetailViewHolder>() {
 
-    var albums: List<Album> = listOf()
+    var album: Album? = null
         set(value) {
             field = value
             notifyDataSetChanged()
         }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumDetailViewHolder {
         val withDataBinding: AlbumItemBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            AlbumViewHolder.LAYOUT,
+            AlbumDetailViewHolder.LAYOUT,
             parent,
             false
         )
-        return AlbumViewHolder(withDataBinding)
-    }
 
-    override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
-        holder.viewDataBinding.also {
-            it.album = albums[position]
-        }
-        holder.bind(albums[position])
-        holder.viewDataBinding.root.setOnClickListener {
-            val album = albums[position]
-            Log.d("Enviando Id:", album.id.toString())
-            val activity = holder.itemView.context
-            val i = Intent(activity, AlbumDetailActivity::class.java)
-            i.putExtra("id", album.id.toString())
-            i.putExtra("name", album.name)
-            activity.startActivity(i)
-        }
-    }
-
-    override fun getItemCount(): Int {
-        return albums.size
+        return AlbumDetailViewHolder(withDataBinding)
     }
 
 
-    class AlbumViewHolder(val viewDataBinding: AlbumItemBinding) :
+    override fun onBindViewHolder(holder: AlbumDetailViewHolder, position: Int) {
+
+    }
+
+    class AlbumDetailViewHolder(val viewDataBinding: AlbumItemBinding) :
         RecyclerView.ViewHolder(viewDataBinding.root) {
         companion object {
             @LayoutRes
@@ -76,6 +57,10 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
                 .into(viewDataBinding.cover)
         }
 
+    }
+
+    override fun getItemCount(): Int {
+        return 1
     }
 
 }

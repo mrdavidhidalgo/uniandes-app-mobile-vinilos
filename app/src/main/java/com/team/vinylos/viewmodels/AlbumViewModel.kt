@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.google.gson.JsonObject
+import com.team.vinylos.models.AlbumCommentRequest
 
 class AlbumViewModel(application: Application) :  AndroidViewModel(application) {
 
@@ -71,6 +72,19 @@ class AlbumViewModel(application: Application) :  AndroidViewModel(application) 
         }
     }
 
+    fun createAlbumComment(albumId: Integer, request : AlbumCommentRequest){
+        try {
+            viewModelScope.launch(Dispatchers.Default) {
+                withContext(Dispatchers.IO){
+                    albumsRepo.createAlbumComment(albumId, albumCommentToJsonObject(request))
+                }
+            }
+        }
+        catch(e: Exception){
+            println("Error creando comentario a album")
+        }
+    }
+
     private fun albumToJsonObject(album: AlbumRequest): JsonObject {
         val paramObject = JsonObject()
         paramObject.addProperty("name", album.name)
@@ -79,6 +93,21 @@ class AlbumViewModel(application: Application) :  AndroidViewModel(application) 
         paramObject.addProperty("description", album.description)
         paramObject.addProperty("genre", album.genre)
         paramObject.addProperty("recordLabel", album.recordLabel)
+        return paramObject
+    }
+
+    private fun albumCommentToJsonObject(request : AlbumCommentRequest): JsonObject{
+        val paramObject = JsonObject()
+        paramObject.addProperty("description", request.description)
+        paramObject.addProperty("rating", request.rating)
+
+        val collector = JsonObject()
+        collector.addProperty("id", request.collector!!.id)
+        collector.addProperty("name", request.collector!!.name)
+        collector.addProperty("telephone", request.collector!!.telephone)
+        collector.addProperty("email", request.collector!!.email)
+        paramObject.add("collector", collector)
+
         return paramObject
     }
 

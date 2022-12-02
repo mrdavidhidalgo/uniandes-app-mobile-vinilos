@@ -12,6 +12,7 @@
     <string name="gender">Género</string>
     <string name="hello_first_fragment">Vinilos, Tu app de música favorita</string>
     <string name="email">Email</string>
+    <string name="albumGenero">Género</string>
     <string name="phone">Telefono</string>
     <string name="bdate">Nacimiento</string>
     <string name="createAlbumTitle">Crear album</string>
@@ -25,6 +26,7 @@
     <string name="albumGenre">Género del álbum</string>
 
     <string name="albumRecordLabel">Productora</string>
+    <string name="commentAlbumButton">Comentar</string>
     <string name="albumRecordLabelType1">Sony Music</string>
     <string name="albumRecordLabelType2">EMI</string>
     <string name="albumRecordLabelType3">Discos Fuentes</string>
