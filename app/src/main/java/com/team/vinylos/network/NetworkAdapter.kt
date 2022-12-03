@@ -17,6 +17,8 @@ object NetworkAdapter {
 
     private val albumResource: AlbumsResource = RetrofitHelper.getRetrofit().create(AlbumsResource::class.java)
 
+    private val albumCommentResource : AlbumsCommentsResource = RetrofitHelper.getRetrofit().create(AlbumsCommentsResource::class.java)
+
     private val collectorResource: CollectorsResource = RetrofitHelper.getRetrofit().create(CollectorsResource::class.java)
 
     private val getCollectorResource: GetCollectorsResource = RetrofitHelper.getRetrofit().create(GetCollectorsResource::class.java)
@@ -31,6 +33,8 @@ object NetworkAdapter {
 
 
     suspend fun getAlbums(): List<Album> = albumResource.getAlbums()
+
+    suspend fun getAlbum(albumId:Integer): Album = albumResource.getAlbum(albumId)
 
     suspend fun createAlbum(album : JsonObject): AlbumResponse = albumResource.createAlbum(album)
 
@@ -47,6 +51,8 @@ object NetworkAdapter {
     suspend fun getPrizes(): List<Prize> = prizeResource.getPrizes()
 
     suspend fun createPrize(prize: JsonObject): PrizeResponse = prizeResource.createPrize(prize)
+
+    suspend fun createAlbumComment(albumId: Integer, comment: JsonObject): AlbumCommentResponse = albumCommentResource.createComment(albumId, comment)
 
 }
 
@@ -71,13 +77,21 @@ interface AlbumsResource {
     @GET("/albums")
     suspend fun getAlbums(): List<Album>
 
+    @GET("/albums/{id}")
+    suspend fun getAlbum(@Path("id") albumId:Integer ): Album
+
     @POST("/albums")
     suspend fun createAlbum(@Body album: JsonObject): AlbumResponse
 
 }
 
+interface AlbumsCommentsResource {
+    @POST("/albums/{id}/comments")
+    suspend fun createComment(@Path("id") albumId:Integer , @Body comment: JsonObject): AlbumCommentResponse
+}
 
-    interface CollectorsResource {
+
+interface CollectorsResource {
     @GET("/collectors")
     suspend fun getCollectors():List<Collector>
 }
