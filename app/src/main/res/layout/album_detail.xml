@@ -217,7 +217,7 @@
                 android:layout_gravity="right"
                 android:padding="5dp">
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/commentButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#1F37BF"

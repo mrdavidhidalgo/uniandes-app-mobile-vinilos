@@ -48,6 +48,12 @@ class AlbumDetailActivity : AppCompatActivity() {
 
         binding.bottomNavigation.selectedItemId = R.id.albums
 
+        binding.commentButton.setOnClickListener {
+            val intent2 = Intent(this, CreateAlbumCommentActivity::class.java)
+            intent2.putExtra("id", albumId)
+            startActivity(intent2)
+        }
+
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when(item.itemId) {
                 R.id.artists-> {

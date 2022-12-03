@@ -138,7 +138,7 @@ class CreatePrizeActivity : AppCompatActivity(){
 
     private fun openCancelDialog(intent: Intent){
         val builder = AlertDialog.Builder(this@CreatePrizeActivity)
-        builder.setMessage("Deseas cancelar la creación del albúm?")
+        builder.setMessage("Deseas cancelar la creación del premio?")
         builder.setTitle("Alerta!")
         builder.setCancelable(false)
         builder.setPositiveButton("Si", DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->

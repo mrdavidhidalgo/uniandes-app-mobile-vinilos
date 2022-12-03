@@ -3,20 +3,16 @@ package com.team.vinylos.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.team.vinylos.R
-import com.team.vinylos.databinding.ActivityCollectorBinding
 import com.team.vinylos.databinding.CollectorDetailBinding
 import com.team.vinylos.models.Album
 import com.team.vinylos.models.Collector
-import com.team.vinylos.ui.adapters.CollectorAdapter
 import com.team.vinylos.ui.adapters.CollectorDetailAdapter
 import com.team.vinylos.viewmodels.CollectorDetailViewModel
-import com.team.vinylos.viewmodels.CollectorViewModel
 
 class CollectorDetailActivity : AppCompatActivity() {
 
@@ -45,6 +41,7 @@ class CollectorDetailActivity : AppCompatActivity() {
             it.apply {
                 binding.collector=this
                 binding.title1.text="  "+this.name.uppercase().get(0)
+
             }
         })
         viewModel.albums.observe(this, Observer<List<Album>>{
