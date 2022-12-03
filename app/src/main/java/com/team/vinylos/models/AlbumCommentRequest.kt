@@ -1,19 +1,17 @@
 package com.team.vinylos.models
 
-import com.google.gson.annotations.SerializedName
-import com.team.vinylos.models.Collector
+class AlbumCommentRequest(
+    description : String,
+    rating : Integer,
+    collector : Collector
 
-class AlbumCommentRequest{
-    @SerializedName("id")
+){
     var id: Number = 0
 
-    @SerializedName("description")
-    var description: String? = null
+    var description = description
 
-    @SerializedName("rating")
-    var rating: Number = 0
+    var rating = rating
 
-    @SerializedName("collector")
-    var collector: Collector? = null
+    var collector = collector
 }
 

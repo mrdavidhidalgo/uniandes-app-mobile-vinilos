@@ -53,6 +53,7 @@ class AlbumRepository (){
     }
 
     suspend fun createAlbumComment(albumId: Integer, comment: JsonObject): AlbumCommentResponse {
+        Log.i("AlbumComment", "Creando comentario para el album $albumId")
         return NetworkAdapter.createAlbumComment(albumId, comment)
     }
 }

@@ -16,8 +16,11 @@
     <string name="phone">Telefono</string>
     <string name="bdate">Nacimiento</string>
     <string name="createAlbumTitle">Crear album</string>
+    <string name="createAlbumCommentTitle">Crear comentario</string>
     <string name="albumName">Nombre del álbum</string>
+    <string name="albumCommentRating">Calificación</string>
     <string name="albumDescription">Descripción del album</string>
+    <string name="albumCommentDescription">Describa su comentario</string>
 
     <string name="albumgenre1">Classical</string>
     <string name="albumgenre2">Salsa</string>
@@ -37,7 +40,9 @@
     <string name="albumReleaseDate">Fecha de lanzamiento</string>
 
     <string name="createAlbumButton">Crear</string>
+    <string name="createAlbumCommentButton">Crear</string>
     <string name="cancelCreateAlbumButton">Cancelar</string>
+    <string name="cancelCreateAlbumCommentButton">Cancelar</string>
 
     <string name="createPrizeTitle">Crear premio</string>
     <string name="prizeName">Nombre del premio</string>
