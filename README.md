@@ -51,13 +51,12 @@ Desplegar el emulador o conectar el dispositivo con SO ANdroid (Activar depuraci
 
 
 ### De forma Grafica en Android Studio
-En la carpeta com.team.vinylos (androidTest), dar click derechoc sobre cualquiera de estos 3 tests y dar Run:
+En la carpeta com.team.vinylos (androidTest), dar click derechoc sobre cualquiera de estos tests y dar Run:
 
-* Test1Albums
-* Test1Artists
-* TestCollectors
 
-![imagen](https://user-images.githubusercontent.com/98839764/200232283-7ec7b2d1-d8f2-4ab8-996a-1b6bcebe1403.png)
+![imagen](https://user-images.githubusercontent.com/98839764/205480414-7c5d31d1-53a9-48b3-93d5-02ac2cab7cd4.png)
+
+
 
 Se desplegará la siguiente ventana con el resumen
 
@@ -93,3 +92,32 @@ adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2ArtistsDetail' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
+
+#### Test3PrizesCreateE2E
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3PrizesCreateE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
+
+#### Test2AlbumDetailE2E
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2AlbumDetailE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+
+``
+#### Test3CommentsAlbumCreateE2E
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3CommentsAlbumCreateE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner`` 
+`
+#### Test2AlbumsCreateValidacion (Escenarios de Validación de Datos)
+``
+adb shell am instrument -w -m -e debug false -e class 'com.team.vinylos.Test2AlbumsCreateValidacion' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
+
+#### Test3PrizesCreateValidation
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3PrizesCreateValidation' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+``
+##`## Test3CommentsAlbumCreateValidation
+``
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3CommentsAlbumCreateValidation' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner`` 
+
+
