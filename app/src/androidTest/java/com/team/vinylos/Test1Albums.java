@@ -70,13 +70,12 @@ public class Test1Albums {
 
         //validar Vista de imagenes
         //ViewInteraction images = onView(allOf(withId(R.id.cover)));
-        onView(withIndex(withId(R.id.cover), 1)).perform(click());
+        //onView(withIndex(withId(R.id.cover), 1)).perform(click());
         onView(allOf(withId(R.id.cover), hasBackground(R.drawable.ic_launcher_background)));
 
 
         //validar Nombre de un album de imagenes
         ViewInteraction album = onView(withId(R.id.textViewName));
-        onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Buscando América")));
 
         SystemClock.sleep(1500);
 

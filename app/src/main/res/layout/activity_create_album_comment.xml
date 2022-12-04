@@ -11,33 +11,10 @@
     tools:context=".ui.AlbumActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
-
-        <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/createAlbumCommentTitle"
-            android:textSize="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.appcompat.widget.Toolbar>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/ScrollView01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scrollbars="vertical">
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,45 +22,75 @@
             android:orientation="vertical">
 
 
-            <EditText
-                android:id="@+id/commentRating"
-                android:layout_width="fill_parent"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
+
+                <TextView
+                    android:id="@+id/textview_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createAlbumCommentTitle"
+                    android:textSize="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <ScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/albumCommentRating"
-                android:inputType="number"></EditText>
+                android:paddingBottom="100dp">
 
-            <EditText
-                android:id="@+id/commentDescription"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/albumCommentDescription"
-                android:inputType="textMultiLine"
-                android:lines="5"></EditText>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/commentRating"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/albumCommentRating"
+                        android:inputType="number"></EditText>
 
-                <Button
-                    android:id="@+id/createAlbumCommentButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15"
-                    android:text="@string/createAlbumCommentButton"></Button>
+                    <EditText
+                        android:id="@+id/commentDescription"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/albumCommentDescription"
+                        android:inputType="textMultiLine"
+                        android:lines="5"></EditText>
 
-                <Button
-                    android:id="@+id/canceCreateAlbumCommentButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15"
-                    android:text="@string/cancelCreateAlbumCommentButton"></Button>
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/createAlbumCommentButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="15"
+                            android:text="@string/createAlbumCommentButton"></Button>
+
+                        <Button
+                            android:id="@+id/canceCreateAlbumCommentButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="15"
+                            android:text="@string/cancelCreateAlbumCommentButton"></Button>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
 
 
         </LinearLayout>
-    </LinearLayout>
     </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"

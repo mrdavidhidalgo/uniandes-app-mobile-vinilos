@@ -72,18 +72,13 @@ public class Test2AlbumsCreateValidacion {
 
         //validar Vista de imagenes
         //ViewInteraction images = onView(allOf(withId(R.id.cover)));
-        onView(withIndex(withId(R.id.cover), 1)).perform(click());
+        //onView(withIndex(withId(R.id.cover), 1)).perform(click());
         onView(allOf(withId(R.id.cover), hasBackground(R.drawable.ic_launcher_background)));
     }
 
     //Escenario 1: entrar a la aplicacion, ver la lista de albumes, intentar crear un album con nombre vacio y verificar que se muestra el mensaje de error
     @Test
     public void Escenario1() {
-         //validar Nombre de un album de imagenes
-        ViewInteraction album = onView(withId(R.id.textViewName));
-        //onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Buscando América")));
-        //onView(ViewMatchers.withId(R.id.albumsRv)).perform(ViewActions.swipeUp());
-
 
         //Desplegar pantalla para creación de Album
         ViewInteraction album2 = onView(withId(R.id.createAlbumButton));
@@ -95,6 +90,7 @@ public class Test2AlbumsCreateValidacion {
         onView(withId(R.id.albumGenre)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Salsa"))).perform(click());
         onView(withId(R.id.albumGenre)).check(matches(withSpinnerText(containsString("Salsa"))));
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard());
         onView(withId(R.id.albumRecordLabel)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("EMI"))).perform(click());
         onView(withId(R.id.albumRecordLabel)).check(matches(withSpinnerText(containsString("EMI"))));
@@ -123,11 +119,6 @@ public class Test2AlbumsCreateValidacion {
     @Test
     public void Escenario2() {
         SystemClock.sleep(2500);
-        //validar Nombre de un album de imagenes
-        ViewInteraction album = onView(withId(R.id.textViewName));
-        //onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Buscando América")));
-        //onView(ViewMatchers.withId(R.id.albumsRv)).perform(ViewActions.swipeUp());
-
 
         //Desplegar pantalla para creación de Album
         ViewInteraction album2 = onView(withId(R.id.createAlbumButton));
@@ -139,6 +130,7 @@ public class Test2AlbumsCreateValidacion {
         onView(withId(R.id.albumGenre)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Salsa"))).perform(click());
         onView(withId(R.id.albumGenre)).check(matches(withSpinnerText(containsString("Salsa"))));
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard());
         onView(withId(R.id.albumRecordLabel)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("EMI"))).perform(click());
         onView(withId(R.id.albumRecordLabel)).check(matches(withSpinnerText(containsString("EMI"))));
@@ -167,11 +159,6 @@ public class Test2AlbumsCreateValidacion {
     @Test
     public void Escenario3() {
         SystemClock.sleep(2500);
-        //validar Nombre de un album de imagenes
-        ViewInteraction album = onView(withId(R.id.textViewName));
-        //onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Buscando América")));
-        //onView(ViewMatchers.withId(R.id.albumsRv)).perform(ViewActions.swipeUp());
-
 
         //Desplegar pantalla para creación de Album
         ViewInteraction album2 = onView(withId(R.id.createAlbumButton));
@@ -183,6 +170,7 @@ public class Test2AlbumsCreateValidacion {
         onView(withId(R.id.albumGenre)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Salsa"))).perform(click());
         onView(withId(R.id.albumGenre)).check(matches(withSpinnerText(containsString("Salsa"))));
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard());
         onView(withId(R.id.albumRecordLabel)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("EMI"))).perform(click());
         onView(withId(R.id.albumRecordLabel)).check(matches(withSpinnerText(containsString("EMI"))));
@@ -211,11 +199,6 @@ public class Test2AlbumsCreateValidacion {
     @Test
     public void Escenario4() {
         SystemClock.sleep(2500);
-        //validar Nombre de un album de imagenes
-        ViewInteraction album = onView(withId(R.id.textViewName));
-        //onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText("Buscando América")));
-        //onView(ViewMatchers.withId(R.id.albumsRv)).perform(ViewActions.swipeUp());
-
 
         //Desplegar pantalla para creación de Album
         ViewInteraction album2 = onView(withId(R.id.createAlbumButton));
@@ -227,6 +210,7 @@ public class Test2AlbumsCreateValidacion {
         onView(withId(R.id.albumGenre)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Salsa"))).perform(click());
         onView(withId(R.id.albumGenre)).check(matches(withSpinnerText(containsString("Salsa"))));
+        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard());
         onView(withId(R.id.albumRecordLabel)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("EMI"))).perform(click());
         onView(withId(R.id.albumRecordLabel)).check(matches(withSpinnerText(containsString("EMI"))));

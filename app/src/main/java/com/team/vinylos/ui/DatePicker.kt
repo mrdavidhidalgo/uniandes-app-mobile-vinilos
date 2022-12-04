@@ -10,7 +10,7 @@ import java.util.*
 
 
 class DatePicker : DialogFragment() {
-    override fun onCreateDialog(@Nullable savedInstanceState: Bundle?): Dialog {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val mCalendar = Calendar.getInstance()
         val year = mCalendar[Calendar.YEAR]
         val month = mCalendar[Calendar.MONTH]

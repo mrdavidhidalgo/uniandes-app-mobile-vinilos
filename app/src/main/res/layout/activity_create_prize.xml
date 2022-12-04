@@ -10,86 +10,92 @@
     android:fadeScrollbars="true"
     tools:context=".ui.CreatePrizeActivity">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
-
-        <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/createPrizeTitle"
-            android:textSize="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.appcompat.widget.Toolbar>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/ScrollView01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scrollbars="vertical">
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.Vinylos.PopupOverlay">
 
-            <EditText
-                android:id="@+id/prizeName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prizeName"
-                android:inputType="text"></EditText>
-
-            <EditText
-                android:id="@+id/prizeOrganization"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prizeOrganization"
-                android:inputType="text"></EditText>
-
-            <EditText
-                android:id="@+id/prizeDescription"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prizeDescription"
-                android:inputType="textMultiLine"
-                android:lines="5"></EditText>
+                <TextView
+                    android:id="@+id/textview_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createPrizeTitle"
+                    android:textSize="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scrollbars="vertical">
 
-                <Button
-                    android:id="@+id/createPrizeButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15"
-                    android:text="@string/createPrizeButton"></Button>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="348dp"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/cancelPrizeButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="15"
-                    android:text="@string/cancelCreatePrizeButton"></Button>
+
+                    <EditText
+                        android:id="@+id/prizeName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prizeName"
+                        android:inputType="text"></EditText>
+
+                    <EditText
+                        android:id="@+id/prizeOrganization"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prizeOrganization"
+                        android:inputType="text"></EditText>
+
+                    <EditText
+                        android:id="@+id/prizeDescription"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prizeDescription"
+                        android:inputType="textMultiLine"
+                        android:lines="5"></EditText>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/createPrizeButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="15"
+                            android:text="@string/createPrizeButton"></Button>
+
+                        <Button
+                            android:id="@+id/cancelPrizeButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="15"
+                            android:text="@string/cancelCreatePrizeButton"></Button>
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
-
-
         </LinearLayout>
-    </LinearLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
