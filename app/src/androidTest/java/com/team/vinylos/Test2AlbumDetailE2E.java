@@ -33,7 +33,7 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class Test1Artists {
+public class Test2AlbumDetailE2E {
 
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityTestRule = new ActivityScenarioRule<>(MainActivity.class);
@@ -43,40 +43,58 @@ public class Test1Artists {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
         assertEquals("com.team.vinylos", appContext.getPackageName());
+
+        ViewInteraction skipBtn = onView(withText("Vinilos, Tu app de música favorita")).check(matches(isDisplayed()));
+
+        ViewInteraction toolBar = onView(allOf(withId(R.id.bottom_navigation),withId(R.id.bottom_navigation),isDisplayed()));
+
+        ViewInteraction menu1 = onView(withId(R.id.albums));
+        menu1.perform(click());
+
+        SystemClock.sleep(1500);
+
+        //ViewInteraction album1 = onView(withText("Poeta del pueblo")).check(matches(isDisplayed()));
+
+        //validar que muestre la palabra genero de cada album mostrado
+        ViewInteraction genero = onView(allOf(withText("Género")));
+
+        //validar Vista de Albumes
+        ViewInteraction textViews = onView(allOf(withId(R.id.textview_first))).check(matches(isDisplayed()));
+
+        //validar Vista de imagenes
+        //ViewInteraction images = onView(allOf(withId(R.id.cover)));
+        onView(allOf(withId(R.id.cover), hasBackground(R.drawable.ic_launcher_background)));
+        onView(withIndex(withId(R.id.cover), 1)).perform(click());
+
     }
 
     @Test
-    public void mainActivityTest2() {
-        ViewInteraction skipBtn = onView(withText("Vinilos, Tu app de música favorita")).check(matches(isDisplayed()));
+    public void viewAlbumDetailTest() {
+
+        //validar Datos de artista
+        ViewInteraction textViews = onView(allOf(withId(R.id.imageAlbum))).check(matches(isDisplayed()));
+        ViewInteraction textViews2 = onView(allOf(withId(R.id.textViewEmailLabel))).check(matches(isDisplayed()));
+        ViewInteraction textViews3 = onView(allOf(withId(R.id.textViewTelephone))).check(matches(isDisplayed()));
 
         ViewInteraction toolBar = onView(allOf(withId(R.id.bottom_navigation),withId(R.id.bottom_navigation),isDisplayed()));
 
         ViewInteraction menu1 = onView(withId(R.id.artists));
         menu1.perform(click());
 
+
         SystemClock.sleep(1500);
 
         //validar que muestre la palabra Nacimeinto de cada artista mostrado
         ViewInteraction Email = onView(allOf(withText("Nacimiento")));
 
-       //validar Vista de artistas
-        ViewInteraction textViews = onView(allOf(withId(R.id.textview_first))).check(matches(isDisplayed()));
+        //validar Vista de artistas
+        ViewInteraction textViews4 = onView(allOf(withId(R.id.textview_first))).check(matches(isDisplayed()));
 
         //validar Vista de imagenes de artista
         //ViewInteraction images = onView(allOf(withId(R.id.cover)));
-        onView(withIndex(withId(R.id.image), 0)).perform(click());
+        //onView(withIndex(withId(R.id.image), 0)).perform(click());
         onView(allOf(withId(R.id.image), hasBackground(R.drawable.ic_launcher_background)));
 
-
-        //validar Nombre de un artista
-        ViewInteraction album = onView(withId(R.id.textViewName));
-        //onView(withIndex(withId(R.id.textViewName), 0)).check(matches(withText(startsWith("Rubén Blades"))));
-        SystemClock.sleep(2000);
-
-        //Ir a Lista de albumes
-        ViewInteraction menu2 = onView(withId(R.id.albums));
-        menu1.perform(click());
-        SystemClock.sleep(2000);
 
     }
 

@@ -64,11 +64,11 @@ class CreateAlbumCommentActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if(albumCommentRating.isEmpty()){
-                albumCommentRatingEditText.error = "Debes diligencias la calificación a realizar"
+                albumCommentRatingEditText.error = "Debes diligenciar la calificación a realizar"
                 return@setOnClickListener
             }
 
-            if(Integer(albumCommentRating) > 5 ||  Integer(albumCommentRating)< 1){
+            if(Integer.valueOf(albumCommentRating) > 5 ||  Integer.valueOf(albumCommentRating)< 1){
                 albumCommentRatingEditText.error = "La calificación debe estar entre 1 y 5"
                 return@setOnClickListener
             }
