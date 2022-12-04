@@ -105,8 +105,9 @@ adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test2
 ``
 #### Test3CommentsAlbumCreateE2E
 ``
-adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3CommentsAlbumCreateE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner`` 
-`
+adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3CommentsAlbumCreateE2E' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
+`` 
+
 #### Test2AlbumsCreateValidacion (Escenarios de Validación de Datos)
 ``
 adb shell am instrument -w -m -e debug false -e class 'com.team.vinylos.Test2AlbumsCreateValidacion' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
@@ -116,8 +117,19 @@ adb shell am instrument -w -m -e debug false -e class 'com.team.vinylos.Test2Alb
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3PrizesCreateValidation' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner
 ``
-##`## Test3CommentsAlbumCreateValidation
+#### Test3CommentsAlbumCreateValidation
 ``
 adb shell am instrument -w -m    -e debug false -e class 'com.team.vinylos.Test3CommentsAlbumCreateValidation' com.team.vinylos.test/androidx.test.runner.AndroidJUnitRunner`` 
+
+
+## Para reconocimiento Aleatorio (Monkey adb)
+
+``adb -s emulator-5554 shell monkey -s 25 --pct-touch 35 --pct-motion 10 --pct-trackball 10 --pct-majornav 15 --pct-anyevent 20 --pct-appswitch 10 --`throttle 250 -p com.team.vinylos -vvvv 350``
+
+`` adb -s emulator-5554 shell monkey -s 343 --pct-touch 35 --pct-motion 10 --pct-trackball 10 --pct-majornav 15 --pct-anyevent 20 --pct-appswitch 10 --throttle 250 -p com.team.vinylos -vvvv 300 ``
+
+``adb -s emulator-5554 shell monkey -s 768 --pct-touch 35 --pct-motion 10 --pct-trackball 10 --pct-majornav 15 --pct-anyevent 20 --pct-appswitch 10 --throttle 250 -p com.team.vinylos -vvvv 250 ``
+
+``adb -s emulator-5554 shell monkey -s 44 --pct-touch 35 --pct-motion 10 --pct-trackball 10 --pct-majornav 15 --pct-anyevent 20 --pct-appswitch 10 --throttle 250 -p com.team.vinylos -vvvv 200``
 
 
