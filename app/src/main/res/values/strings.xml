@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Vinylos</string>
     <string name="albums">Albumes</string>
+    <string name="albumList">Listado de álbumes</string>
     <string name="artist">Artistas</string>
     <string name="collectors">Coleccionistas</string>
     <string name="prizes">Premios</string>
@@ -16,10 +17,16 @@
     <string name="bdate">Nacimiento</string>
     <string name="createAlbumTitle">Crear album</string>
     <string name="createAlbumCommentTitle">Crear comentario</string>
+    <string name="createPremioButtonDescription">Crear premio</string>
+    <string name="CancelCreatePremioButtonDescription">Cancelar creación del premio</string>
     <string name="albumName">Nombre del álbum</string>
     <string name="albumCommentRating">Calificación</string>
     <string name="albumDescription">Descripción del album</string>
     <string name="albumCommentDescription">Describa su comentario</string>
+    <string name="createAlbumButtonDescription">Crear album</string>
+    <string name="CancelCreateAlbumButtonDescription">Cancelar creación de album</string>
+    <string name="CreateCommentButton">Crear comentario</string>
+    <string name="CancelCreateCommentButton">Cancelar creación del comentario</string>
 
     <string name="albumgenre1">Classical</string>
     <string name="albumgenre2">Salsa</string>

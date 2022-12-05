@@ -33,7 +33,7 @@
                 android:gravity="center_vertical"
                 android:padding="10dp"
                 tools:text="  A"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textSize="60sp" />
 
             <LinearLayout
@@ -52,6 +52,7 @@
                     android:paddingTop="3dp"
                     android:paddingEnd="8dp"
                     android:paddingBottom="5dp"
+                    android:textColor="@color/black"
                     android:text="@{collector.name}"
                     android:textStyle="bold|italic"
                     tools:text="Name" />
@@ -68,6 +69,7 @@
                         android:paddingStart="8dp"
                         android:paddingTop="3dp"
                         android:paddingEnd="5dp"
+                        android:textColor="@color/black"
                         android:paddingBottom="2dp"
                         android:text="@string/email"
                         android:textStyle="bold|italic"
@@ -78,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
                     android:paddingTop="3dp"
+                    android:textColor="@color/black"
                     android:paddingEnd="5dp"
                     android:paddingBottom="2dp"
                     android:text="@{collector.email}"
@@ -95,6 +98,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="8dp"
                         android:paddingTop="3dp"
+                        android:textColor="@color/black"
                         android:paddingEnd="5dp"
                         android:paddingBottom="2dp"
                         android:text="@string/phone"
@@ -106,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
                     android:paddingTop="3dp"
+                    android:textColor="@color/black"
                     android:paddingEnd="5dp"
                     android:paddingBottom="2dp"
                     android:text="@{collector.telephone}"

@@ -43,6 +43,7 @@
                         android:layout_width="106dp"
                         android:layout_height="wrap_content"
                         android:textStyle="bold|italic"
+                        android:textColor="@color/black"
                         android:text="Organizacion" />
 
                     <TextView
@@ -73,6 +74,7 @@
                     android:paddingEnd="5dp"
                     android:paddingBottom="2dp"
                     tools:text="@string/bdate"
+                    android:textColor="@color/black"
                     android:textStyle="bold|italic"
                     android:text="Nombre" />
 
@@ -109,6 +111,7 @@
                     android:paddingTop="3dp"
                     android:paddingEnd="5dp"
                     android:paddingBottom="5dp"
+                    android:textColor="@color/black"
                     android:text="@{prize.description}"
                     android:textAlignment="textEnd"
                     android:textSize="10sp"

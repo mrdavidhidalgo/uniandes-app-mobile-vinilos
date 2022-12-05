@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/prizes"
+        android:textColor="#FFFFFF"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="@color/blue"
-
+        android:contentDescription="@string/createPremioButtonDescription"
         app:menu="@menu/bottom_navigation_menu"
         android:layout_gravity="bottom"
         />
@@ -48,6 +49,7 @@
         android:id="@+id/createPrizeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/CancelCreatePremioButtonDescription"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="70dp"
         android:layout_marginEnd="10dp"
