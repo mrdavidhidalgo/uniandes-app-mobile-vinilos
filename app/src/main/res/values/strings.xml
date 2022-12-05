@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Vinylos</string>
     <string name="albums">Albumes</string>
+    <string name="albumList">Listado de álbumes</string>
     <string name="artist">Artistas</string>
     <string name="collectors">Coleccionistas</string>
     <string name="prizes">Premios</string>

@@ -34,6 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
                     android:text="@string/createAlbumCommentTitle"
                     android:textSize="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,8 +56,9 @@
                         android:id="@+id/commentRating"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:textColorHint="#000000"
                         android:hint="@string/albumCommentRating"
-                        android:textSize="40dp"
+                        android:textSize="30dp"
                         android:inputType="number"></EditText>
 
                     <EditText
@@ -65,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/albumCommentDescription"
                         android:textColor="#000000"
+                        android:textColorHint="#000000"
                         android:inputType="textMultiLine"
                         android:lines="5"></EditText>
 
