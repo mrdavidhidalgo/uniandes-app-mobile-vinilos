@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/createAlbumTitle"
+                    android:textColor="#FFFFFF"
                     android:textSize="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/albumName"
+                        android:textSize="25dp"
                         android:inputType="text"></EditText>
 
                     <EditText
@@ -63,6 +65,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/albumDescription"
+                        android:textSize="25dp"
                         android:inputType="textMultiLine"
                         android:lines="5"></EditText>
 
@@ -71,12 +74,14 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/albumGenre"
+                        android:textSize="25dp"
                         android:prompt="@string/albumGenre"></Spinner>
 
                     <Spinner
                         android:id="@+id/albumRecordLabel"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="25dp"
                         android:entries="@array/albumRecordLabelType"
                         android:prompt="@string/albumRecordLabel"></Spinner>
 
@@ -85,6 +90,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/albumCover"
+                        android:textSize="25dp"
                         android:inputType="text"></EditText>
 
                     <EditText
@@ -92,6 +98,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
+                        android:textSize="25dp"
                         android:focusable="true"
                         android:hint="@string/albumReleaseDate"
                         android:inputType="date"></EditText>

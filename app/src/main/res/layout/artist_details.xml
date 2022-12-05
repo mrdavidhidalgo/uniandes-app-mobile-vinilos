@@ -39,6 +39,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textColor="#FFFFFF"
                     android:text="@{artist.name}"
                     android:textSize="20sp"
                     android:textStyle="bold" />

@@ -43,6 +43,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{album.name}"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -81,27 +83,7 @@
                         android:orientation="vertical"
                         android:padding="5dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:padding="5dp">
 
-                            <TextView
-                                android:id="@+id/textViewName"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="8dp"
-                                android:paddingTop="3dp"
-                                android:paddingEnd="8dp"
-                                android:paddingBottom="5dp"
-                                android:text="@{album.name}"
-                                android:textStyle="bold|italic"
-                                tools:text="Name" />
-
-                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"

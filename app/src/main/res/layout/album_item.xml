@@ -44,6 +44,7 @@
                     android:paddingTop="3dp"
                     android:paddingEnd="8dp"
                     android:paddingBottom="5dp"
+                    android:textColor="@color/black"
                     android:text="@{album.name}"
                     android:textStyle="bold|italic"
                     tools:text="AlbumName" />
@@ -59,6 +60,7 @@
                     android:paddingStart="8dp"
                     android:paddingTop="3dp"
                     android:paddingEnd="5dp"
+                    android:textColor="@color/black"
                     android:paddingBottom="2dp"
                     tools:text="Gender"
                     android:textStyle="bold|italic"

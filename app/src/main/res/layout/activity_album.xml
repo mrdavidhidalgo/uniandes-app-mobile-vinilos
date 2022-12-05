@@ -24,10 +24,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textview_first"
+                android:id="@+id/mainTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/albums"
+                android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,13 +59,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemBackground="@color/blue"
-
+        android:contentDescription="@string/createAlbumButtonDescription"
         app:menu="@menu/bottom_navigation_menu"
         android:layout_gravity="bottom"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/createAlbumButton"
+        android:contentDescription="@string/CancelCreateAlbumButtonDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

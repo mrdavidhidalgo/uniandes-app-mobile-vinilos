@@ -33,6 +33,7 @@
                     android:id="@+id/textview_first"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
                     android:text="@string/createAlbumCommentTitle"
                     android:textSize="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +56,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/albumCommentRating"
+                        android:textSize="40dp"
                         android:inputType="number"></EditText>
 
                     <EditText
@@ -62,6 +64,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/albumCommentDescription"
+                        android:textColor="#000000"
                         android:inputType="textMultiLine"
                         android:lines="5"></EditText>
 
@@ -74,6 +77,7 @@
                             android:id="@+id/createAlbumCommentButton"
                             android:layout_width="fill_parent"
                             android:layout_height="match_parent"
+                            android:contentDescription="@string/CreateCommentButton"
                             android:layout_weight="15"
                             android:text="@string/createAlbumCommentButton"></Button>
 
@@ -81,6 +85,7 @@
                             android:id="@+id/canceCreateAlbumCommentButton"
                             android:layout_width="fill_parent"
                             android:layout_height="match_parent"
+                            android:contentDescription="@string/CancelCreateCommentButton"
                             android:layout_weight="15"
                             android:text="@string/cancelCreateAlbumCommentButton"></Button>
                     </LinearLayout>
